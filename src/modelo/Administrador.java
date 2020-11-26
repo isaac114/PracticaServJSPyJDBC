@@ -19,12 +19,10 @@ public class Administrador implements Serializable {
 	private String correo;
 	private String contrasena;
 	private Empresa empresa;
+	private String cedula;
 	
-	
-	
-	
-	
-	public Administrador(int id, String nombre, String apellidos, String correo, String contrasena, Empresa empresa) {
+	public Administrador(int id, String nombre, String apellidos, String correo, String contrasena, Empresa empresa,
+			String cedula) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -32,8 +30,8 @@ public class Administrador implements Serializable {
 		this.correo = correo;
 		this.contrasena = contrasena;
 		this.empresa = empresa;
+		this.cedula = cedula;
 	}
-	
 	public int getId() {
 		return id;
 	}
@@ -70,12 +68,23 @@ public class Administrador implements Serializable {
 	public void setEmpresa(Empresa empresa) {
 		this.empresa = empresa;
 	}
+	public String getCedula() {
+		return cedula;
+	}
+	public void setCedula(String cedula) {
+		this.cedula = cedula;
+	}
+	
 
 	@Override
 	public String toString() {
 		return "Administrador [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", correo=" + correo
-				+ ", contrasena=" + contrasena + ", empresa=" + empresa + "]";
+				+ ", contrasena=" + contrasena + ", empresa=" + empresa + ", cedula=" + cedula + "]";
 	}
+	
+	
+	
+	
 	
 	
 	
