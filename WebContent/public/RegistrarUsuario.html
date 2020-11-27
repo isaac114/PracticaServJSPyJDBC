@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registrar Usuario</title>
+</head>
+<body>
+	<main role="main" class="container my-auto">
+		<div class="row">
+			<div id="registro" class="col-lg-4 offset-lg-4 col-md-6 offset-md-3
+                    col-12">
+                    <h2 class="text-center">Bienvenido, Registro de Usuario</h2>
+                    <form action="http://localhost:8080/PracticaServJSPyJDBC/RegistrarUsuario" method="GET">
+                    	<div class="form-group">
+                    		<label for="nombre">Nombre</label>
+                            <input id="nombre" name="nombre" class="form-control" placeholder="Nombre...">
+                            <label for="apellido">Apellido</label>
+                            <input id="apellido" name="apellido" class="form-control" placeholder="Apellido...">
+                            <label for="cedula">Cedula</label>
+                            <input id="cedula" name="cedula" class="form-control" placeholder="Cedula...">
+                            <select  class="form-control" id="exampleFormControlSelect1" name="empresa">
+						        <option>Papelesa</option>
+								<option>Importsum</option>
+								<option>Monsalve</option>
+							</select>
+                            <label for="correo">Correo Electrónico</label>
+                            <input id="correo" name="correo" class="form-control" placeholder="Correo...">
+                            <label for="contra">Contraseña</label>
+                            <input id="contrasena" name="contrasena" type="password" class="form-control" placeholder="Contraseña...">
+                    	</div>
+                    	<div class="form-group">
+    						<INPUT type="submit" class="btn-info" value="Enviar"> <INPUT type="reset" class="btn-info" value="Resetear">
+    					</div>
+                    </form>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
