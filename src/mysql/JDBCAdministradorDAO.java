@@ -15,8 +15,8 @@ public class JDBCAdministradorDAO extends JDBCGenericDAO<Administrador, Integer>
 	@Override
 	public void create(Administrador admin) {
 		// TODO Auto-generated method stub
-		String sql = "INSERT Usuario VALUES(NULL,'"+admin.getNombre()+"','"+admin.getApellidos()+"','"+admin.getCedula()+"','"
-				+admin.getCorreo()+"','"+admin.getContrasena()+"','"+"A"+1
+		String sql = "INSERT INTO Usuarios VALUES(NULL,'"+admin.getNombre()+"','"+admin.getApellidos()+"','"+admin.getCedula()+"','"
+				+admin.getCorreo()+"','"+admin.getContrasena()+"','"+"A',"+1
 				+ ")";
 		conexionUno.update(sql);
 		

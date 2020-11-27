@@ -1,8 +1,15 @@
 package dao;
-import mysql.*;
+
 
 
 public abstract class DAOFactory {
 	
-	
+	protected static DAOFactory factory = new JDBCDAOFactory();
+    
+    public static DAOFactory getDAOFactory(){return factory;}
+    
+    public abstract void createTables();
+    
+    public abstract AdministradorDAO getAdminDAO();
+    
 }
