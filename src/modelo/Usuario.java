@@ -8,7 +8,7 @@ public class Usuario implements Serializable{
 	
 	private int id;
 	private String nombres;
-	private String apillidos;
+	private String apellidos;
 	private String cedula;
 	private String correo;
 	private String contrasena;
@@ -19,7 +19,7 @@ public class Usuario implements Serializable{
 		super();
 		this.id = id;
 		this.nombres = nombres;
-		this.apillidos = apellidos;
+		this.apellidos = apellidos;
 		this.cedula = cedula;
 		this.correo = correo;
 		this.contrasena = contrasena;
@@ -43,12 +43,12 @@ public class Usuario implements Serializable{
 		this.nombres = nombres;
 	}
 
-	public String getApillidos() {
-		return apillidos;
+	public String getApellidos() {
+		return apellidos;
 	}
 
-	public void setApillidos(String apillidos) {
-		this.apillidos = apillidos;
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
 	}
 
 	public String getCedula() {
@@ -93,7 +93,7 @@ public class Usuario implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nombres=" + nombres + ", apillidos=" + apillidos + ", cedula=" + cedula
+		return "Usuario [id=" + id + ", nombres=" + nombres + ", apillidos=" + apellidos + ", cedula=" + cedula
 				+ ", correo=" + correo + ", contrasena=" + contrasena + ", tipo_usuario=" + tipo_usuario + ", empresa="
 				+ empresa + "]";
 	}

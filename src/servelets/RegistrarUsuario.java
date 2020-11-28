@@ -7,6 +7,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import dao.DAOFactory;
+import dao.UsuarioDAO;
+import modelo.Usuario;
 
 /**
  * Servlet implementation class RegistrarUsuario
@@ -14,12 +17,15 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/RegistrarUsuario")
 public class RegistrarUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	private UsuarioDAO usuarioDao;
+	private Usuario usuario;
+	
     /**
      * Default constructor. 
      */
     public RegistrarUsuario() {
-        // TODO Auto-generated constructor stub
+        
+    	
     }
 
 	/**
