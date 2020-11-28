@@ -30,59 +30,19 @@ public class RegistrarUsuario extends HttpServlet {
     	usuario = new Usuario();
     	
     }
-    
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-    	
-    	System.out.println("Ingresando al metodo doPost de RegistrarUsuario : Servlet");
-    	
-    	int codigo_empresa;
-    	
-    	String empresa = request.getParameter("empresa");
-    	if(empresa == "Papelesa") {
-    		codigo_empresa = 1;
-    	} else if(empresa == "Importsum") {
-    		codigo_empresa = 2;
-    	} else if(empresa == "Monsalve") {
-    		codigo_empresa = 4;
-    	} else {
-    		codigo_empresa = 0;
-    	}
-    	
-    	String url = null;
-    	
-    	try {
-    		usuario.setId(0);
-    		usuario.setNombres(request.getParameter("nombres"));
-    		usuario.setApellidos(request.getParameter("apellido"));
-    		usuario.setCedula(request.getParameter("cedula"));
-    		usuario.setCorreo(request.getParameter("correo"));
-    		usuario.setContrasena(request.getParameter("contrasena"));
-    		usuario.setTipo_usuario("U");
-    		usuario.setEmpresa(codigo_empresa);
-    		usuarioDao.create(usuario);
-    		System.out.println("User registrado en la base de datos !!");
-    	}catch(Exception e) {
-    		System.out.println("Error: " + e.getMessage());
-    	}
-    	
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println("Ingresando al metodo doGet de RegistrarUsuario : Servlet");
+		System.out.println("Ingresando al metodo doPost de RegistrarUsuario : Servlet");
     	
     	int codigo_empresa;
     	
     	String empresa = request.getParameter("empresa");
-    	if(empresa == "Papelesa") {
+    	if(empresa.equals("Papelesa")) {
     		codigo_empresa = 1;
-    	} else if(empresa == "Importsum") {
+    	} else if(empresa.equals("Importsum")) {
     		codigo_empresa = 2;
-    	} else if(empresa == "Monsalve") {
+    	} else if(empresa.equals("Monsalve")) {
     		codigo_empresa = 4;
     	} else {
     		codigo_empresa = 0;
@@ -91,10 +51,9 @@ public class RegistrarUsuario extends HttpServlet {
     	String url = null;
     	
     	try {
-    		ContextJDBC conexion = new ContextJDBC();
-    		conexion.connect();
+    		
     		usuario.setId(0);
-    		usuario.setNombres(request.getParameter("nombres"));
+    		usuario.setNombres(request.getParameter("nombre"));
     		usuario.setApellidos(request.getParameter("apellido"));
     		usuario.setCedula(request.getParameter("cedula"));
     		usuario.setCorreo(request.getParameter("correo"));
@@ -102,9 +61,11 @@ public class RegistrarUsuario extends HttpServlet {
     		usuario.setTipo_usuario("U");
     		usuario.setEmpresa(codigo_empresa);
     		usuarioDao.create(usuario);
+    		
     		System.out.println("User registrado en la base de datos !!");
+    		
     	}catch(Exception e) {
-    		e.printStackTrace();
+    		System.out.println("Error: " + e.getMessage());
     	}
 		
 	}

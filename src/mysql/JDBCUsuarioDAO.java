@@ -34,7 +34,7 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, Integer> implements 
 		
 		try {
 			System.out.println("Ha ingresado a JDBCUsuarioDAO");
-			conexionUno.update("INSERT Persona VALUES (" + usuario.getId() + ", '" 
+			conexionUno.update("INSERT Usuarios VALUES (" + usuario.getId() + ", '" 
 					 + usuario.getNombres() + "', '"
 					 + usuario.getApellidos() + "', '" 
 					 + usuario.getCedula() + "', '"
@@ -73,7 +73,7 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, Integer> implements 
 	}
 
 	@Override
-	public Usuario findAdmin(int id, String nombres, String apellidos, String cedula, String correo, String contrasena,
+	public Usuario findUser(int id, String nombres, String apellidos, String cedula, String correo, String contrasena,
 			String tipo_usuario, int empresa) {
 		// TODO Auto-generated method stub
 		return null;
