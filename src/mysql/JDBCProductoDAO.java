@@ -1,5 +1,7 @@
 package mysql;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 import dao.ProductoDAO;
@@ -48,6 +50,8 @@ public class JDBCProductoDAO extends JDBCGenericDAO<Producto, Integer> implement
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	
 
 	
 

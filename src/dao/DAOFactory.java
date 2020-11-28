@@ -1,3 +1,4 @@
+
 package dao;
 
 
@@ -19,5 +20,6 @@ public abstract class DAOFactory {
      *EDITADO POR: ISAAC CHAVEZ
      *METODO ABSTRACTO getProductoDAO() 
      */
+    public abstract ProductoDAO getProductoDAO();
     
 }
