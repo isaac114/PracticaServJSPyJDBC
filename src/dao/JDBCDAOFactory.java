@@ -2,6 +2,7 @@ package dao;
 
 import mysql.JDBCAdministradorDAO;
 import mysql.JDBCProductoDAO;
+import mysql.JDBCUsuarioDAO;
 
 public  class JDBCDAOFactory extends DAOFactory {
 
@@ -20,8 +21,10 @@ public  class JDBCDAOFactory extends DAOFactory {
 
 	@Override
 	public UsuarioDAO getUsuarioDAO() {
-		// TODO Auto-generated method stub
-		return null;
+		/*
+		 * EDITADO POR: JORGE YELA VELEZ.
+		 */
+		return new JDBCUsuarioDAO();
 	}
 
 	/*

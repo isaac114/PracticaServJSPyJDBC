@@ -32,14 +32,19 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, Integer> implements 
 	@Override
 	public void create(Usuario usuario) {
 		
-		conexionUno.update("INSERT Persona VALUES (" + usuario.getId() + ", '" 
-													 + usuario.getNombres() + "', '"
-													 + usuario.getApellidos() + "', '" 
-													 + usuario.getCedula() + "', '"
-													 + usuario.getCorreo() + "', '"
-													 + usuario.getContrasena() + "', '"
-													 + usuario.getTipo_usuario() + "', '"
-													 + usuario.getEmpresa() + "')");
+		try {
+			System.out.println("Ha ingresado a JDBCUsuarioDAO");
+			conexionUno.update("INSERT Usuarios VALUES (" + usuario.getId() + ", '" 
+					 + usuario.getNombres() + "', '"
+					 + usuario.getApellidos() + "', '" 
+					 + usuario.getCedula() + "', '"
+					 + usuario.getCorreo() + "', '"
+					 + usuario.getContrasena() + "', '"
+					 + usuario.getTipo_usuario() + "', '"
+					 + usuario.getEmpresa() + "')");
+		}catch(Exception e) {
+			System.out.println("Ha ocurrido una excepcion en JDBCUsuarioDAO: " + e.getMessage());
+		}
 		
 	}
 
@@ -68,7 +73,7 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, Integer> implements 
 	}
 
 	@Override
-	public Usuario findAdmin(int id, String nombres, String apellidos, String cedula, String correo, String contrasena,
+	public Usuario findUser(int id, String nombres, String apellidos, String cedula, String correo, String contrasena,
 			String tipo_usuario, int empresa) {
 		// TODO Auto-generated method stub
 		return null;
