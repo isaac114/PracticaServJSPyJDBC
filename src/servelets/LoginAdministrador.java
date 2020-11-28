@@ -1,19 +1,26 @@
 package servelets;
 
 import java.io.IOException;
+
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.AdministradorDAO;
+import dao.DAOFactory;
+import modelo.Administrador;
 
-@WebServlet("/Login")
-public class Login extends HttpServlet {
+
+@WebServlet("/LoginAdministrador")
+public class LoginAdministrador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     
-    public Login() {
+    public LoginAdministrador() {
         // TODO Auto-generated constructor stub
     }
 
@@ -30,13 +37,28 @@ public class Login extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/public/login.html");
+		dispatcher.forward(request, response);
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String email = request.getParameter("correo");
+		String contrasena = request.getParameter("contrasena");
+		System.out.println("DATOS---->"+email+"---"+contrasena);
+		
+		AdministradorDAO adminDAO = DAOFactory.getDAOFactory().getAdminDAO();
+		Administrador admin = adminDAO.findAdmin(email, contrasena);
+		if(admin != null) {
+			System.out.println("Inicio secion Administrador:"+admin.getNombre());
+			RequestDispatcher rd;
+			rd = request.getRequestDispatcher("/JPSs/VentanaAdmin.jsp");
+			rd.forward(request, response);
+			System.out.println("si pasa");
+		}else {
+			System.out.println("no entra");
+		}
 	}
 
 	
@@ -50,3 +72,4 @@ public class Login extends HttpServlet {
 	}
 
 }
+

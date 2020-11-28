@@ -1,4 +1,6 @@
 package mysql;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 import dao.AdministradorDAO;
@@ -44,6 +46,27 @@ public class JDBCAdministradorDAO extends JDBCGenericDAO<Administrador, Integer>
 	public List<Administrador> find() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public Administrador findAdmin(String correo, String contrasena) {
+		Administrador admin = null;
+		ResultSet rs = conexionUno.query("SELECT * FROM USUARIOS WHERE us_correo LIKE '"+correo+"' AND us_contrasena LIKE '"+contrasena+"'");
+        try {
+            if (rs != null && rs.next()) {
+                int id = rs.getInt("us_id");
+                String nombre = rs.getString("us_nombre");
+                String apellido = rs.getString("us_apellidos");
+                String cedula = rs.getString("us_cedula");
+                String email = rs.getString("us_correo");
+                String psw = rs.getString("us_contrasena");
+                Administrador aux = new Administrador(id, nombre, apellido, email, psw, null, cedula);
+                admin = aux;
+                
+            }
+        } catch (SQLException e) {
+            System.out.println(">>>WARNING (JDBCUserDAO:findAdministrador): " + e.getMessage());
+        }
+		return admin;
 	}
 
 }

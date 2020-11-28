@@ -1,9 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-    <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" >
-    
+	<meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" >    
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="diseno/css/diseno.css">
@@ -17,9 +17,8 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
     <title>Document</title>
+
 </head>
-
-
 <body style="background-color: #575757;">
 
     <header class="container-fluid" id="cabecera">
@@ -28,52 +27,16 @@
                 <img src="diseno/imagenes/logos2.png"  id="logo">
             </div>
       
-            <div class="col-xs-1" id="buscadorCabecera">
-            
-            	<form metod="post" action="LoginAdministrador">
-            		<button type="submit" class="btn btn-primary " id="ok"  >Login</Button>
-            	</form>
-                
-            </div>
         </div>
         
     </header>
     
+    
+    
+    
+    <h2>ESTOY EN LA VENTANA DEL ADMINISTRADOR</h2>
+    
    
-
-
-    <div class="sli" >
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block w-100" id="foto" src="diseno/imagenes/covering-reading-books-elegant-literature-kafka.jpg" alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" id="foto" src="diseno/imagenes/8bcca68f478ae1aa5b85dae3e56082d8.jpg" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" id="foto" src="diseno/imagenes/uno.jpg" alt="Third slide" >
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" id="foto" src="diseno/imagenes/dos.jpg" alt="Third slide" >
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" id="foto" src="diseno/imagenes/tres.jpg" alt="Third slide" >
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-    </div>
-
-
-
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -87,6 +50,11 @@
 
 
 </body>
+
+
+
+
+
 
 <!-- Footer -->
 <footer class="page-footer font-small  darken-3 s" style="background-color: #393939; padding-top: 1opx;">
@@ -142,10 +110,4 @@
     <!-- Copyright -->
   
   </footer>
-  <!-- Footer -->
-
-<!--
-<script src="../js/jquery.js"></script>
-<script src="../js/bootstrap.js"></script>
--->
 </html>
