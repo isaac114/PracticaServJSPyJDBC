@@ -12,10 +12,14 @@ public class Usuario implements Serializable{
 	private String cedula;
 	private String correo;
 	private String contrasena;
-	private char tipo_usuario;
-	private Empresa empresa;
+	private String tipo_usuario;
+	private int empresa;
 	
-	public Usuario(int id, String nombres, String apellidos, String cedula, String correo, String contrasena, char tipo_usuario, Empresa empresa) {
+	public Usuario() {
+		//CONSTRUCTOR OBLIGATORIO. 
+	}
+	
+	public Usuario(int id, String nombres, String apellidos, String cedula, String correo, String contrasena, String tipo_usuario, int empresa) {
 		super();
 		this.id = id;
 		this.nombres = nombres;
@@ -75,19 +79,19 @@ public class Usuario implements Serializable{
 		this.contrasena = contrasena;
 	}
 
-	public char getTipo_usuario() {
+	public String getTipo_usuario() {
 		return tipo_usuario;
 	}
 
-	public void setTipo_usuario(char tipo_usuario) {
+	public void setTipo_usuario(String tipo_usuario) {
 		this.tipo_usuario = tipo_usuario;
 	}
 
-	public Empresa getEmpresa() {
+	public int getEmpresa() {
 		return empresa;
 	}
 
-	public void setEmpresa(Empresa empresa) {
+	public void setEmpresa(int empresa) {
 		this.empresa = empresa;
 	}
 

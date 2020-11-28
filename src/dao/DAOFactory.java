@@ -12,4 +12,7 @@ public abstract class DAOFactory {
     
     public abstract AdministradorDAO getAdminDAO();
     
+    //EDITADO POR: JORGE YELA VELEZ.
+    public abstract UsuarioDAO getUsuarioDAO();
+    
 }

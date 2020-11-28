@@ -16,6 +16,12 @@ public  class JDBCDAOFactory extends DAOFactory {
 		// TODO Auto-generated method stub
 		return new JDBCAdministradorDAO();
 	}
+
+	@Override
+	public UsuarioDAO getUsuarioDAO() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }

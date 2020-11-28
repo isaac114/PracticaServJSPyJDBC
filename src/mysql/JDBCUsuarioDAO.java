@@ -39,7 +39,7 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, Integer> implements 
 													 + usuario.getCorreo() + "', '"
 													 + usuario.getContrasena() + "', '"
 													 + usuario.getTipo_usuario() + "', '"
-													 + usuario.getEmpresa().getId() + "')");
+													 + usuario.getEmpresa() + "')");
 		
 	}
 
@@ -63,6 +63,13 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, Integer> implements 
 
 	@Override
 	public List<Usuario> find() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Usuario findAdmin(int id, String nombres, String apellidos, String cedula, String correo, String contrasena,
+			String tipo_usuario, int empresa) {
 		// TODO Auto-generated method stub
 		return null;
 	}

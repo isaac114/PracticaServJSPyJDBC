@@ -25,6 +25,42 @@ public class RegistrarUsuario extends HttpServlet {
      */
     public RegistrarUsuario() {
         
+    	usuarioDao = DAOFactory.getDAOFactory().getUsuarioDAO();
+    	usuario = new Usuario();
+    	
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+    	
+    	int codigo_empresa;
+    	
+    	String empresa = request.getParameter("empresa");
+    	if(empresa == "Papelesa") {
+    		codigo_empresa = 1;
+    	} else if(empresa == "Importsum") {
+    		codigo_empresa = 2;
+    	} else if(empresa == "Monsalve") {
+    		codigo_empresa = 4;
+    	} else {
+    		codigo_empresa = 0;
+    	}
+    	
+    	String url = null;
+    	
+    	try {
+    		usuario.setNombres(request.getParameter("nombres"));
+    		usuario.setApellidos(request.getParameter("apellido"));
+    		usuario.setCedula(request.getParameter("cedula"));
+    		usuario.setEmpresa(codigo_empresa);
+    		usuario.setCorreo(request.getParameter("correo"));
+    		usuario.setContrasena(request.getParameter("contrasena"));
+    		usuario.setTipo_usuario("U");
+    		usuarioDao.create(usuario);
+    		System.out.println("User registrado en la base de datos !!");
+    	}catch(Exception e) {
+    		System.out.println("Error: " + e.getMessage());
+    	}
     	
     }
 
@@ -33,7 +69,7 @@ public class RegistrarUsuario extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String nombre;
+		/*String nombre;
 		String apellido;
 		String cedula;
 		String empresa;
@@ -53,7 +89,36 @@ public class RegistrarUsuario extends HttpServlet {
 		out.println("<p><strong>Empresa: </strong>"+ empresa +"</p>");
 		correo = request.getParameter("correo");
 		out.println("<p><strong>Correo Electronico: </strong>"+ correo +"</p>");
-		contrasena = request.getParameter("contrasena");
+		contrasena = request.getParameter("contrasena");*/
+		
+		int codigo_empresa;
+    	
+    	String empresa = request.getParameter("empresa");
+    	if(empresa == "Papelesa") {
+    		codigo_empresa = 1;
+    	} else if(empresa == "Importsum") {
+    		codigo_empresa = 2;
+    	} else if(empresa == "Monsalve") {
+    		codigo_empresa = 4;
+    	} else {
+    		codigo_empresa = 0;
+    	}
+    	
+    	String url = null;
+    	
+    	try {
+    		usuario.setNombres(request.getParameter("nombres"));
+    		usuario.setApellidos(request.getParameter("apellido"));
+    		usuario.setCedula(request.getParameter("cedula"));
+    		usuario.setEmpresa(codigo_empresa);
+    		usuario.setCorreo(request.getParameter("correo"));
+    		usuario.setContrasena(request.getParameter("contrasena"));
+    		usuario.setTipo_usuario("U");
+    		usuarioDao.create(usuario);
+    		System.out.println("User registrado en la base de datos !!");
+    	}catch(Exception e) {
+    		System.out.println("Error: " + e.getMessage());
+    	}
 		
 	}
 
