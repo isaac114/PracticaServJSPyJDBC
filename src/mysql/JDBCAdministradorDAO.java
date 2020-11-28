@@ -18,7 +18,7 @@ public class JDBCAdministradorDAO extends JDBCGenericDAO<Administrador, Integer>
 	public void create(Administrador admin) {
 		// TODO Auto-generated method stub
 		String sql = "INSERT INTO Usuarios VALUES(NULL,'"+admin.getNombre()+"','"+admin.getApellidos()+"','"+admin.getCedula()+"','"
-				+admin.getCorreo()+"','"+admin.getContrasena()+"','"+"A',"+1
+				+admin.getCorreo()+"','"+admin.getContrasena()+"','"+"A',"+admin.getEmpresa().getId()
 				+ ")";
 		conexionUno.update(sql);
 		

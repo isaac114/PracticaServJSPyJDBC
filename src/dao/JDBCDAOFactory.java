@@ -23,5 +23,10 @@ public  class JDBCDAOFactory extends DAOFactory {
 		return null;
 	}
 	
+	/*
+	 * EDITADO POR:ISAAC CHAVEZ
+	 * AGREGAR PRODUCTO()
+	 */
+	
 	
 }

@@ -15,4 +15,9 @@ public abstract class DAOFactory {
     //EDITADO POR: JORGE YELA VELEZ.
     public abstract UsuarioDAO getUsuarioDAO();
     
+    /*
+     *EDITADO POR: ISAAC CHAVEZ
+     *METODO ABSTRACTO getProductoDAO() 
+     */
+    
 }
