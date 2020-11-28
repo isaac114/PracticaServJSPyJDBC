@@ -1,6 +1,6 @@
 package servelets;
 
-import java.io.IOException;
+import java.io.IOException;  
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.DAOFactory;
 import dao.UsuarioDAO;
 import modelo.Usuario;
+import mysql.*;
 
 /**
  * Servlet implementation class RegistrarUsuario
@@ -33,6 +34,8 @@ public class RegistrarUsuario extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
     	
+    	System.out.println("Ingresando al metodo doPost de RegistrarUsuario : Servlet");
+    	
     	int codigo_empresa;
     	
     	String empresa = request.getParameter("empresa");
@@ -49,13 +52,14 @@ public class RegistrarUsuario extends HttpServlet {
     	String url = null;
     	
     	try {
+    		usuario.setId(0);
     		usuario.setNombres(request.getParameter("nombres"));
     		usuario.setApellidos(request.getParameter("apellido"));
     		usuario.setCedula(request.getParameter("cedula"));
-    		usuario.setEmpresa(codigo_empresa);
     		usuario.setCorreo(request.getParameter("correo"));
     		usuario.setContrasena(request.getParameter("contrasena"));
     		usuario.setTipo_usuario("U");
+    		usuario.setEmpresa(codigo_empresa);
     		usuarioDao.create(usuario);
     		System.out.println("User registrado en la base de datos !!");
     	}catch(Exception e) {
@@ -69,29 +73,9 @@ public class RegistrarUsuario extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		/*String nombre;
-		String apellido;
-		String cedula;
-		String empresa;
-		String correo;
-		String contrasena;
-		
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		out.println("<html><head><title>Registro Usuario</title></head><body>");
-		nombre = request.getParameter("nombre");
-		out.println("<p><strong>Nombre: </strong>"+ nombre +"</p>");
-		apellido = request.getParameter("apellido");
-		out.println("<p><strong>Apellido: </strong>"+ apellido +"</p>");
-		cedula = request.getParameter("cedula");
-		out.println("<p><strong>Cedula: </strong>"+ cedula +"</p>");
-		empresa = request.getParameter("empresa");
-		out.println("<p><strong>Empresa: </strong>"+ empresa +"</p>");
-		correo = request.getParameter("correo");
-		out.println("<p><strong>Correo Electronico: </strong>"+ correo +"</p>");
-		contrasena = request.getParameter("contrasena");*/
-		
-		int codigo_empresa;
+		System.out.println("Ingresando al metodo doGet de RegistrarUsuario : Servlet");
+    	
+    	int codigo_empresa;
     	
     	String empresa = request.getParameter("empresa");
     	if(empresa == "Papelesa") {
@@ -107,17 +91,20 @@ public class RegistrarUsuario extends HttpServlet {
     	String url = null;
     	
     	try {
+    		ContextJDBC conexion = new ContextJDBC();
+    		conexion.connect();
+    		usuario.setId(0);
     		usuario.setNombres(request.getParameter("nombres"));
     		usuario.setApellidos(request.getParameter("apellido"));
     		usuario.setCedula(request.getParameter("cedula"));
-    		usuario.setEmpresa(codigo_empresa);
     		usuario.setCorreo(request.getParameter("correo"));
     		usuario.setContrasena(request.getParameter("contrasena"));
     		usuario.setTipo_usuario("U");
+    		usuario.setEmpresa(codigo_empresa);
     		usuarioDao.create(usuario);
     		System.out.println("User registrado en la base de datos !!");
     	}catch(Exception e) {
-    		System.out.println("Error: " + e.getMessage());
+    		e.printStackTrace();
     	}
 		
 	}

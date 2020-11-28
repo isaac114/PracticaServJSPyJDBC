@@ -32,14 +32,19 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, Integer> implements 
 	@Override
 	public void create(Usuario usuario) {
 		
-		conexionUno.update("INSERT Persona VALUES (" + usuario.getId() + ", '" 
-													 + usuario.getNombres() + "', '"
-													 + usuario.getApellidos() + "', '" 
-													 + usuario.getCedula() + "', '"
-													 + usuario.getCorreo() + "', '"
-													 + usuario.getContrasena() + "', '"
-													 + usuario.getTipo_usuario() + "', '"
-													 + usuario.getEmpresa() + "')");
+		try {
+			System.out.println("Ha ingresado a JDBCUsuarioDAO");
+			conexionUno.update("INSERT Persona VALUES (" + usuario.getId() + ", '" 
+					 + usuario.getNombres() + "', '"
+					 + usuario.getApellidos() + "', '" 
+					 + usuario.getCedula() + "', '"
+					 + usuario.getCorreo() + "', '"
+					 + usuario.getContrasena() + "', '"
+					 + usuario.getTipo_usuario() + "', '"
+					 + usuario.getEmpresa() + "')");
+		}catch(Exception e) {
+			System.out.println("Ha ocurrido una excepcion en JDBCUsuarioDAO: " + e.getMessage());
+		}
 		
 	}
 
