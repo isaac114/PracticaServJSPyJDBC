@@ -3,6 +3,7 @@ package mysql;
 import java.sql.ResultSet;   
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import dao.CabeceraDAO;
 import modelo.Cabecera;
@@ -11,7 +12,12 @@ public class JDBCCabeceraDAO extends JDBCGenericDAO<Cabecera, Integer> implement
 
 	@Override
 	public void createTable() {
-		// TODO Auto-generated method stub
+		conexionUno.update("DROP TABLE IF EXISTS Compra_Cabecera");
+		conexionUno.update("CREATE TABLE Compra_Cabecera (" + "cc_id INT(4) NOT NULL AUTO_INCREMENT, "
+															+ "cc_fecha DATE NOT NULL, "
+															+ "cc_estado CHAR(1) NOT NULL,"
+															+ "PRIMARY KEY (cc_id)"
+															+ ")");
 		
 	}
 
@@ -41,8 +47,20 @@ public class JDBCCabeceraDAO extends JDBCGenericDAO<Cabecera, Integer> implement
 
 	@Override
 	public Cabecera findUser(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Cabecera cbr = null;
+		ResultSet rs = conexionUno.query("SELECT * FROM Compra_Cabecera WHERE cc_id LIKE "+"'"+id+"'");
+		try {
+			if(rs != null && rs.next()) {
+				int idN = rs.getInt("cc_id");
+				Date fecha = rs.getDate("cc_fecha");
+				String estado = rs.getString("cc_estado");
+				
+				cbr = new Cabecera(id,fecha,estado);
+			}
+		} catch(SQLException e) {
+			System.out.println(">>>WARNING (JDBCCabeceraDAO-->): " + e.getMessage());
+		}
+		return cbr;
 	}
 
 	@Override
