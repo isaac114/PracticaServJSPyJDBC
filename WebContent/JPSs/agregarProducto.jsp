@@ -71,22 +71,26 @@
 			
 			
 			<div class=col-xs-4>
-				<form method="POST" >
+				<form method="post" action="/PracticaServJSPyJDBC/AnadirProductos">
 					  <div class="form-group">
 					    <label for="nombre">Nombre del Producto</label>
-					    <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Ingrese el nombre">
+					    <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp" placeholder="Ingrese el nombre">
 					  </div>
 					  <div class="form-group">
 					    <label for="descripcion">Descripcion</label>
-					    <input type="text" class="form-control" id="descripcion" placeholder="Ingrese la Descripcion">
+					    <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Ingrese la Descripcion">
+					  </div>
+					  <div class="form-group">
+					    <label for="precio">Precio</label>
+					    <input type="text" class="form-control" id="precio" name="precio" placeholder="Ingrese la Descripcion">
 					  </div>
 					  <div class="form-group">
 					    <label for="cate">Categoria</label>
-					    <input type="text" class="form-control" id="cate" placeholder="Ingrese la Categoria">
+					    <input type="text" class="form-control" id="cate" name="cate" placeholder="Ingrese la Categoria">
 					  </div>
 					  <div class="form-group">
 					    <label for="empresa">Empresa</label>
-					    <input type="text" class="form-control" id="empresa" placeholder="Ingrese la empresa">
+					    <input type="text" class="form-control" id="empresa" name="empresa" placeholder="Ingrese la empresa">
 					  </div>
 					 
 					  <button type="submit" class="btn btn-primary">Submit</button>

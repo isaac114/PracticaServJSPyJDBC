@@ -16,34 +16,27 @@ import modelo.Empresa;
 import modelo.Producto;
 
 /**
- * Servlet implementation class AgregarProducto
+ * Servlet implementation class AnadirProductos
  */
-@WebServlet(name = "AgregarProducto")
-public class AgregarProducto extends HttpServlet {
+@WebServlet("/AnadirProductos")
+public class AnadirProductos extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AgregarProducto() {
+    public AnadirProductos() {
         super();
         // TODO Auto-generated constructor stub
     }
-    
-    
-    
-
-
-
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher dispatcher = request.getRequestDispatcher("http://localhost:8080/PracticaServJSPyJDBC/JPSs/AgregarProducto.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/JPSs/agregarProducto.jsp");
 		dispatcher.forward(request, response);
-		
 	}
 
 	/**
@@ -52,23 +45,16 @@ public class AgregarProducto extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String nombre = request.getParameter("nombre");
+		String precio  = request.getParameter("precio");
 		String descripcion = request.getParameter("descripcion");
 		String categoria = request.getParameter("cate");
-		String empresa =  request.getParameter("empresa");
-		String precio = request.getParameter("precio");
-		ProductoDAO productoDAO = DAOFactory.getDAOFactory().getProductoDAO();
-		Categoria cate = new Categoria(1,categoria);
-		Empresa emp = new Empresa(1,"",empresa,null);
-		Producto p = new Producto(0, nombre, precio, descripcion, cate, emp);
-		System.out.println("Datos Producto:-->"+nombre+"-"+descripcion+"-"+categoria+"-"+precio);
-		try {
-			//productoDAO.create(p);
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			System.out.println("AgregarProductoDAO--->"+e.getMessage());
-		}
-		
+		String empresa = request.getParameter("empresa");
+		System.out.println("Datos dEL producto = "+nombre+"-"+precio+"-"+descripcion+"-"+categoria+"-"+empresa);
+		Categoria cat = new Categoria(1,"");
+		Empresa em = new Empresa(1, "", "", "");
+		Producto pro = new Producto(0, nombre, precio, descripcion, cat, em);
+		ProductoDAO productoDao = DAOFactory.getDAOFactory().getProductoDAO();
+		productoDao.create(pro);
 	}
 
 }
