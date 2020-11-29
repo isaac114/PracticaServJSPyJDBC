@@ -47,7 +47,7 @@ public class ComprobarUsuario extends HttpServlet {
 			} else if(tipo_user.equals("A")) {
 				
 				System.out.println("El usuario " + user.getNombres() + " " + user.getApellidos() + ", es administrador !!");
-				response.sendRedirect("http://localhost:8080/PracticaServJSPyJDBC/JPSs/VentanaAdmin.jsp");
+				response.sendRedirect("http://localhost:8080/PracticaServJSPyJDBC/JPSs/VentanaAdmin.jsp?eid="+user.getEmpresa());
 				
 			} else {
 				
