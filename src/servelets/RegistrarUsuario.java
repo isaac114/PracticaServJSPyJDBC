@@ -7,6 +7,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
+
 import dao.DAOFactory;
 import dao.UsuarioDAO;
 import modelo.Usuario;
@@ -63,6 +65,14 @@ public class RegistrarUsuario extends HttpServlet {
     		usuarioDao.create(usuario);
     		
     		System.out.println("User registrado en la base de datos !!");
+    		
+    		response.getWriter().print("<html><head><title>Registro Usuario</title></head>"
+    								 + "<body style=\"background-color: #575757;\">"
+    								 + "<h2>Bienvenid@ " + usuario.getNombres() + " " + usuario.getApellidos() + ", es un gusto contar contigo.</h2>"
+    								 + "<p>En nuestro sistema podras solicitar tus compras.</p>"
+    								 + "<a href=\"http://localhost:8080/PracticaServJSPyJDBC/public/login.html\">"
+    								 + "Para iniciar con tus requerimientos de compras, inicia sesion aqui !!</a>"
+    								 + "</body>");
     		
     	}catch(Exception e) {
     		System.out.println("Error: " + e.getMessage());

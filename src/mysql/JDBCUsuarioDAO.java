@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import dao.UsuarioDAO;
+import modelo.Empresa;
 import modelo.Usuario;
 
 public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, Integer> implements UsuarioDAO{
@@ -73,10 +74,28 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, Integer> implements 
 	}
 
 	@Override
-	public Usuario findUser(int id, String nombres, String apellidos, String cedula, String correo, String contrasena,
-			String tipo_usuario, int empresa) {
-		// TODO Auto-generated method stub
-		return null;
+	public Usuario findUser(String correo, String password) {
+		Usuario user = null;
+		ResultSet rs = conexionUno.query("SELECT * FROM Usuarios WHERE us_correo LIKE "+correo);
+		try {
+            if (rs != null && rs.next()) {
+                int id = rs.getInt("us_id");
+                String nombres =  rs.getString("us_nombre");
+                String apellidos = rs.getString("apellido");
+                String cedula = rs.getString("us_cedula");
+                String correoN = rs.getString("us_correo");
+                String contrasena = rs.getString("us_contrasena");
+                String tipo_usuario = rs.getString("us_tipo_usuario");
+                int id_empresa = rs.getInt("Empresa_em_id");
+                
+                user = new Usuario(id, nombres, apellidos, cedula, correoN, contrasena, tipo_usuario, id_empresa);
+                
+            }
+        } catch (SQLException e) {
+            System.out.println(">>>WARNING (JDBCEmpresaDAO-->): " + e.getMessage());
+        }
+		
+		return user;
 	}
 
 }
