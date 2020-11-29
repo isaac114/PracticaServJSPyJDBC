@@ -21,6 +21,7 @@ import modelo.Producto;
 @WebServlet("/AnadirProductos")
 public class AnadirProductos extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	String eid = "";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -35,7 +36,8 @@ public class AnadirProductos extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/JPSs/agregarProducto.jsp");
+		eid = request.getParameter("eid");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/JPSs/agregarProducto.jsp?eid="+eid);
 		dispatcher.forward(request, response);
 	}
 
@@ -55,7 +57,7 @@ public class AnadirProductos extends HttpServlet {
 		Producto pro = new Producto(0, nombre, precio, descripcion, cat, em);
 		ProductoDAO productoDao = DAOFactory.getDAOFactory().getProductoDAO();
 		productoDao.create(pro);
-		response.sendRedirect("http://localhost:8080/PracticaServJSPyJDBC/AnadirProductos");
+		response.sendRedirect("http://localhost:8080/PracticaServJSPyJDBC/AnadirProductos?eid="+eid);
 		System.out.println("Se creo el Producto-->"+pro.getNombre());
 	}
 

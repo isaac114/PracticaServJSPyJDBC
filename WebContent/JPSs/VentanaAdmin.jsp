@@ -45,7 +45,7 @@
 				   <a  style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/AnadirProductos">Agregar Productos</a>
 				    <a style = "font-size: 15px" class="dropdown-item" href="#">Eliminar Producto</a>
 				    <a style = "font-size: 15px" class="dropdown-item" href="#">Editar Producto</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/BuscarProducto">Buscar Productos</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/BuscarProducto?eid=<%=request.getParameter("eid") %>">Buscar Productos</a>
 				    <a style = "font-size: 15px" class="dropdown-item" href="#">Listar Producto</a>
 				  </div>
 				</div>
@@ -85,6 +85,10 @@
     
     
     <h2>ESTOY EN LA VENTANA DEL ADMINISTRADOR</h2>
+    <b><%= request.getParameter("empresa") %></b>
+
+
+
     
    
 

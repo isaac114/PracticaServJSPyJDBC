@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import dao.ProductoDAO;
+import modelo.Administrador;
 import modelo.Categoria;
 import modelo.Empresa;
 import modelo.Producto;
@@ -53,8 +54,30 @@ public class JDBCProductoDAO extends JDBCGenericDAO<Producto, Integer> implement
 		return null;
 	}
 	
-	public Producto findProducto(String nombre) {
-		return null;
+	public Producto findProducto(String nombre, int id) {
+		Producto p = null;
+		Empresa emp = new Empresa(0,"","","");
+		Categoria cate = new Categoria(0,"");
+		String sql = "SELECT * FROM producto WHERE pro_nombre LIKE '"+nombre+"' AND Empresa_em_id = "+id;
+		ResultSet rs = conexionUno.query(sql);
+		try {
+			if (rs != null && rs.next()) {
+                int idp = rs.getInt("pro_id");
+                String nombrep = rs.getString("pro_nombre");
+                String precio  =  rs.getString("pro_precio");
+                String descripcion = rs.getString("pro_descripcion");
+                int empresaid = rs.getInt("Empresa_em_id");
+                int cateid = rs.getInt("Categoria_cat_id");
+                emp.setId(empresaid);
+                cate.setId(cateid);
+                p = new Producto(idp, nombrep, precio, descripcion, cate, emp);
+                
+            }
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(">>>WARNING (JDBCPoducto:findProducto()): " + e.getMessage());
+		}
+		return p;
 	}
 
 	
