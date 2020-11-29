@@ -38,7 +38,7 @@
 				    	<small style = "font-size: 15px" >PRODUCTOS</small>
 				  	</button>
 				  	<div  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    	<a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/agregarProducto.java">Realizar Pedido</a>
+				    	<a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/RealizarCompra?correo=<%=request.getParameter("correo") %>">Realizar Pedido</a>
 				    	<a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/CerrarSesion">Cerrar Sesion</a>
 				  	</div>
 				</div>

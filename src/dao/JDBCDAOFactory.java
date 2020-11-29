@@ -1,6 +1,6 @@
 package dao;
 
-import mysql.JDBCAdministradorDAO;
+import mysql.JDBCAdministradorDAO; 
 import mysql.JDBCProductoDAO;
 import mysql.JDBCUsuarioDAO;
 
