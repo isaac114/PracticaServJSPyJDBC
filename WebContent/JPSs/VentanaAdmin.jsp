@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" >    
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="diseno/css/diseno.css">
+    <link rel="stylesheet" href="http://localhost:8080/PracticaServJSPyJDBC/diseno/css/diseno.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -25,7 +25,7 @@
     <header class="container-fluid" id="cabecera">
         <div class="row" >
             <div class="col-xs-11">
-                <img src="diseno/imagenes/logos2.png"  id="logo">
+                <img src="http://localhost:8080/PracticaServJSPyJDBC/diseno/imagenes/logos2.png"  id="logo">
             </div>
       
         </div>
