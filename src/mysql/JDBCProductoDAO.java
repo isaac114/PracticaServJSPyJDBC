@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 import dao.ProductoDAO;
+import modelo.Categoria;
+import modelo.Empresa;
 import modelo.Producto;
 
 public class JDBCProductoDAO extends JDBCGenericDAO<Producto, Integer> implements ProductoDAO {
@@ -29,7 +31,7 @@ public class JDBCProductoDAO extends JDBCGenericDAO<Producto, Integer> implement
 
 	@Override
 	public Producto read(Integer id) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
@@ -51,7 +53,9 @@ public class JDBCProductoDAO extends JDBCGenericDAO<Producto, Integer> implement
 		return null;
 	}
 	
-	
+	public Producto findProducto(String nombre) {
+		return null;
+	}
 
 	
 

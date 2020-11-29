@@ -3,39 +3,41 @@ package servelets;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.DAOFactory;
-import dao.ProductoDAO;
-import modelo.Categoria;
-import modelo.Empresa;
-import modelo.Producto;
-
 /**
- * Servlet implementation class AnadirProductos
+ * Servlet implementation class BuscarProducto
  */
-@WebServlet("/AnadirProductos")
-public class AnadirProductos extends HttpServlet {
+@WebServlet("/BuscarProducto")
+public class BuscarProducto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AnadirProductos() {
+    public BuscarProducto() {
         super();
         // TODO Auto-generated constructor stub
     }
+
+	/**
+	 * @see Servlet#init(ServletConfig)
+	 */
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/JPSs/agregarProducto.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/JPSs/BuscarProductoForm.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -45,18 +47,9 @@ public class AnadirProductos extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String nombre = request.getParameter("nombre");
-		String precio  = request.getParameter("precio");
-		String descripcion = request.getParameter("descripcion");
-		String categoria = request.getParameter("cate");
-		String empresa = request.getParameter("empresa");
-		System.out.println("Datos dEL producto = "+nombre+"-"+precio+"-"+descripcion+"-"+categoria+"-"+empresa);
-		Categoria cat = new Categoria(1,"");
-		Empresa em = new Empresa(1, "", "", "");
-		Producto pro = new Producto(0, nombre, precio, descripcion, cat, em);
-		ProductoDAO productoDao = DAOFactory.getDAOFactory().getProductoDAO();
-		productoDao.create(pro);
-		response.sendRedirect("http://localhost:8080/PracticaServJSPyJDBC/AnadirProductos");
-		System.out.println("Se creo el Producto-->"+pro.getNombre());
+		System.out.println("Si pasa el parameter"+nombre);
+		
+		response.sendRedirect("http://localhost:8080/PracticaServJSPyJDBC/BuscarProducto");
 	}
 
 }
