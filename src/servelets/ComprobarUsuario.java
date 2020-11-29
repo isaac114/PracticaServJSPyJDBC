@@ -36,24 +36,23 @@ public class ComprobarUsuario extends HttpServlet {
 		
 		if(user != null) {
 			System.out.println("Inicio secion Usuario:"+user.getNombres());
-			RequestDispatcher rd;
-			rd = request.getRequestDispatcher("/JPSs/VentanaAdmin.jsp");
-			rd.forward(request, response);
-			System.out.println("si pasa");
-			
+						
 			String tipo_user = user.getTipo_usuario();
 			
 			if(tipo_user.equals("U")) {
 				
 				System.out.println("El usuario " + user.getNombres() + " " + user.getApellidos() + ", es un usuario normal !!");
+				response.sendRedirect("http://localhost:8080/PracticaServJSPyJDBC/JPSs/VentanaUsuario.jsp");
 				
 			} else if(tipo_user.equals("A")) {
 				
 				System.out.println("El usuario " + user.getNombres() + " " + user.getApellidos() + ", es administrador !!");
+				response.sendRedirect("http://localhost:8080/PracticaServJSPyJDBC/JPSs/VentanaAdmin.jsp");
 				
 			} else {
 				
 				System.out.println("Usuario no encontrado");
+				response.sendRedirect("http://localhost:8080/PracticaServJSPyJDBC/public/login.html");
 				
 			}
 			
