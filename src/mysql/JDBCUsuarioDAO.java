@@ -76,12 +76,12 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, Integer> implements 
 	@Override
 	public Usuario findUser(String correo, String password) {
 		Usuario user = null;
-		ResultSet rs = conexionUno.query("SELECT * FROM Usuarios WHERE us_correo LIKE "+correo);
+		ResultSet rs = conexionUno.query("SELECT * FROM Usuarios WHERE us_correo LIKE "+"'"+correo+"'");
 		try {
             if (rs != null && rs.next()) {
                 int id = rs.getInt("us_id");
                 String nombres =  rs.getString("us_nombre");
-                String apellidos = rs.getString("apellido");
+                String apellidos = rs.getString("us_apellidos");
                 String cedula = rs.getString("us_cedula");
                 String correoN = rs.getString("us_correo");
                 String contrasena = rs.getString("us_contrasena");
