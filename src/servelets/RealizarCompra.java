@@ -57,7 +57,7 @@ public class RealizarCompra extends HttpServlet {
 		try {
 			
 			usuario = usuarioDao.findUser(correo, contra);
-			//request.setAttribute("usuario", usuario);
+			
 			int codigo_empresa = usuario.getEmpresa();
 			
 			listaProducto = productoDao.buscarPorEmpresa(codigo_empresa);
@@ -65,15 +65,14 @@ public class RealizarCompra extends HttpServlet {
 			System.out.println("Tamaño de la lista: " + listaProducto.size());
 			request.setAttribute("productos", listaProducto);
 			
-			//url = \"http://localhost:8080/PracticaServJSPyJDBC/JPSs/CompraProductos.jsp\;
-			response.sendRedirect("http://localhost:8080/PracticaServJSPyJDBC/JPSs/CompraProductos.jsp");
-
+			url = "/JPSs/CompraProductos.jsp";
+			//response.sendRedirect("http://localhost:8080/PracticaServJSPyJDBC/JPSs/CompraProductos.jsp");
 			
 		}catch(Exception e) {
 			//url = "http://localhost:8080/PracticaServJSPyJDBC/JPSs/VentanaUsuario.jsp";
 			System.out.println("Error: " + e.getMessage());
 		}
-		//getServletContext().getRequestDispatcher(url).forward(request, response);
+		getServletContext().getRequestDispatcher(url).forward(request, response);
 		
 	}
 
