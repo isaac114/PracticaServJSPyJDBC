@@ -7,6 +7,7 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Productos Disponibles</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 	<c:set var="lista" scope="request" value="${productos}" />
@@ -28,5 +29,18 @@
 			</tr>
 		</c:forEach>
 	</table>
+	
+	<div id="resultado"></div>
+	
+	<script>
+		$(function(){
+			$('table tr td').click(function(){
+				var columna = $(this).index();
+				var fila = $(this).parent('tr').index();
+				var contenido = $(this).html();
+				$('#resultado').html('Contenido: '+contenido);
+			});
+		});
+	</script>
 </body>
 </html>
