@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -21,6 +22,10 @@
 
 </head>
 <body style="background-color: #575757;">
+<c:set var="p" scope="request" value="${producto}"/>
+<% out.print(request.getAttribute("producto").toString());%>
+<p>ID: ${p.id}</p> 
+<p>Nombre: ${p.nombre}</p> 
 
     <header class="container-fluid" id="cabecera">
         <div class="row" >
@@ -81,16 +86,35 @@
 				  </div>
 				</div>
 				-->
+				
+				
 			
 		</div>
+		
 		<div class=col-xs-4>
-				<form method="post" action="/PracticaServJSPyJDBC/BuscarProducto">
+				<form method="post" action="/PracticaServJSPyJDBC/AnadirProductos">
 					  <div class="form-group">
 					    <label for="nombre">Nombre del Producto</label>
 					    <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp" placeholder="Ingrese el nombre">
 					  </div>
-					  
-					  <button type="submit" class="btn btn-primary">Buscar</button>
+					  <div class="form-group">
+					    <label for="descripcion">Descripcion</label>
+					    <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Ingrese la Descripcion">
+					  </div>
+					  <div class="form-group">
+					    <label for="precio">Precio</label>
+					    <input type="text" class="form-control" id="precio" name="precio" placeholder="Ingrese la Descripcion">
+					  </div>
+					  <div class="form-group">
+					    <label for="cate">Categoria</label>
+					    <input type="text" class="form-control" id="cate" name="cate" placeholder="Ingrese la Categoria">
+					  </div>
+					  <div class="form-group">
+					    <label for="empresa">Empresa</label>
+					    <input type="text" class="form-control" id="empresa" name="empresa" placeholder="Ingrese la empresa">
+					  </div>
+					 
+					  <button type="submit" class="btn btn-primary">Submit</button>
 				</form>
 			</div>
 	</div>
