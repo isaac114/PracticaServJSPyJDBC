@@ -13,6 +13,13 @@ public class Producto implements Serializable{
 	private Categoria categoria;
 	private Empresa empresa;
 	
+	/*
+	 * EDITADO POR: JORGE YELA VELEZ. 
+	 */
+	public Producto() {
+		//CONSTRUCTOR OBLIGATORIO;
+	}
+	
 	public Producto(int id, String nombre, String precio, String descripcion, Categoria categoria, Empresa empresa) {
 		super();
 		this.id = id;

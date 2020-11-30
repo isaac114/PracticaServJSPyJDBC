@@ -42,7 +42,7 @@ public class ComprobarUsuario extends HttpServlet {
 			if(tipo_user.equals("U")) {
 				
 				System.out.println("El usuario " + user.getNombres() + " " + user.getApellidos() + ", es un usuario normal !!");
-				response.sendRedirect("http://localhost:8080/PracticaServJSPyJDBC/JPSs/VentanaUsuario.jsp?correo="+email);
+				response.sendRedirect("http://localhost:8080/PracticaServJSPyJDBC/JPSs/VentanaUsuario.jsp?correo="+email+"&contra="+contrasena);
 				
 			} else if(tipo_user.equals("A")) {
 				
