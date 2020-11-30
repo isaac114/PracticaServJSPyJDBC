@@ -35,8 +35,6 @@
 	<script>
 		$(function(){
 			$('table tr td').click(function(){
-				var columna = $(this).index();
-				var fila = $(this).parent('tr').index();
 				var contenido = $(this).html();
 				$('#resultado').html('Contenido: '+contenido);
 			});
