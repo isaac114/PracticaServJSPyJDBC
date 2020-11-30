@@ -11,16 +11,18 @@ public class Cabecera implements Serializable{
 	private int id;
 	private Date fecha;
 	private String estado;
+	private int empresa_id;
 	
 	public Cabecera() {
 		//CONSTRUCTOR OBLIGATORIO. 
 	}
 	
-	public Cabecera(int id, Date fache, String estado) {
+	public Cabecera(int id, Date fache, String estado, int empresa_id) {
 		super();
 		this.id = id;
 		this.fecha = fecha;
 		this.estado = estado;
+		this.empresa_id = empresa_id;
 	}
 
 	public int getId() {
@@ -47,9 +49,17 @@ public class Cabecera implements Serializable{
 		this.estado = estado;
 	}
 
+	public int getEmpresa_id() {
+		return empresa_id;
+	}
+
+	public void setEmpresa_id(int empresa_id) {
+		this.empresa_id = empresa_id;
+	}
+
 	@Override
 	public String toString() {
-		return "Cabecera [id=" + id + ", fecha=" + fecha + ", estado=" + estado + "]";
+		return "Cabecera [id=" + id + ", fecha=" + fecha + ", estado=" + estado + ", empresa_id=" + empresa_id + "]";
 	}
-	
+
 }

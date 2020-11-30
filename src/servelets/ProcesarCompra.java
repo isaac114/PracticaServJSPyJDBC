@@ -57,27 +57,39 @@ public class ProcesarCompra extends HttpServlet {
 		String stringNew = carrito;
 		String[] parts = stringNew.split(",");
 		
-		for(int i=1;i<=parts.length-1;i++) {
+		/*for(int i=1;i<=parts.length-1;i++) {
 			System.out.println("item: " + parts[i]);
-		}
+		}*/
 		
 		try {
 			
-			int codigoDual = 0;
-			
-			
-			
-			
-			
 			for(int i=1;i<=parts.length-1;i++) {
-				cabecera.setId(codigoDual);
+				
+				/*cabecera.setId(0);
 				cabecera.setFecha(fecha);
 				cabecera.setEstado("E");
-				cabeceraDao.create(cabecera);
+				cabecera.setEmpresa_id(i);
+				cabeceraDao.create(cabecera);*/
 				
-				detalle.setId(0);
-				detalle.setId_cabecera(codigoDual);
-				//detalle.setId_producto(id_producto);
+				//BUSCAR ID PRODUCTO. 
+				int codigo_producto_recuperado=0;
+				int codigo_empresa_producto=0;
+				producto = productoDao.buscarPorDescripcion(parts[i]);
+				if(producto != null) {
+					codigo_producto_recuperado = producto.getId();
+					codigo_empresa_producto = producto.getEmpresa().getId();
+					//CREANDO COMPRA CABECERA. 
+					cabecera.setId(0);
+					cabecera.setFecha(fecha);
+					cabecera.setEstado("E");
+					cabecera.setEmpresa_id(codigo_empresa_producto);
+				} else {
+					System.out.println("Error al recuperar el producto, Servlet : ProcesarCompra.java");
+				}
+				
+				/*detalle.setId(0);
+				detalle.setId_cabecera(0);
+				//detalle.setId_producto(id_producto);*/
 			}
 			
 			System.out.println("Compra cabecera registrada con exito !!");

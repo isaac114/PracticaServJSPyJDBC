@@ -15,7 +15,8 @@ public class JDBCCabeceraDAO extends JDBCGenericDAO<Cabecera, Integer> implement
 		conexionUno.update("DROP TABLE IF EXISTS Compra_Cabecera");
 		conexionUno.update("CREATE TABLE Compra_Cabecera (" + "cc_id INT(4) NOT NULL AUTO_INCREMENT, "
 															+ "cc_fecha DATE NOT NULL, "
-															+ "cc_estado CHAR(1) NOT NULL,"
+															+ "cc_estado CHAR(1) NOT NULL, "
+															+ "cc_empresa_id VARCHAR(3) NOT NULL,"
 															+ "PRIMARY KEY (cc_id)"
 															+ ")");
 		
@@ -54,8 +55,9 @@ public class JDBCCabeceraDAO extends JDBCGenericDAO<Cabecera, Integer> implement
 				int idN = rs.getInt("cc_id");
 				Date fecha = rs.getDate("cc_fecha");
 				String estado = rs.getString("cc_estado");
+				int id_empresa_N = rs.getInt("cc_empresa_id");
 				
-				cbr = new Cabecera(id,fecha,estado);
+				cbr = new Cabecera(id,fecha,estado,id_empresa_N);
 			}
 		} catch(SQLException e) {
 			System.out.println(">>>WARNING (JDBCCabeceraDAO-->): " + e.getMessage());
@@ -69,8 +71,9 @@ public class JDBCCabeceraDAO extends JDBCGenericDAO<Cabecera, Integer> implement
 		try {
 			System.out.println("Ha ingresado a JDBCUsuarioDAO");
 			conexionUno.update("INSERT Usuarios VALUES (" + cabecera.getId() + ", '" 
-					 + cabecera.getFecha() + "', '"
-					 + cabecera.getEstado() + "')");
+					 									  + cabecera.getFecha() + "', '"
+					 									  + cabecera.getEstado() + "', "
+					 									  + cabecera.getEmpresa_id() + ")");
 		} catch(Exception e) {
 			System.out.println("Error: " + e.getMessage());
 		}
