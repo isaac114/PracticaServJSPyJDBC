@@ -1,6 +1,7 @@
 package dao;
 
-import mysql.JDBCAdministradorDAO; 
+import mysql.JDBCAdministradorDAO;
+import mysql.JDBCCabeceraDAO;
 import mysql.JDBCProductoDAO;
 import mysql.JDBCUsuarioDAO;
 
@@ -36,6 +37,12 @@ public  class JDBCDAOFactory extends DAOFactory {
 	public ProductoDAO getProductoDAO() {
 		// TODO Auto-generated method stub
 		return 	new JDBCProductoDAO();
+	}
+
+	@Override
+	public CabeceraDAO getCabeceraDAO() {
+		// TODO Auto-generated method stub
+		return new JDBCCabeceraDAO();
 	}
 	
 	
