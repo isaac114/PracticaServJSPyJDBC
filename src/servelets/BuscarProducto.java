@@ -57,10 +57,12 @@ public class BuscarProducto extends HttpServlet {
 		System.out.println("Si pasa el parameter"+nombre+"--"+eid);
 		ProductoDAO pdao = DAOFactory.getDAOFactory().getProductoDAO();
 		Producto p = pdao.findProducto(nombre, Integer.parseInt(eid));
-		System.out.println("Se encontro el producto-->"+p.getNombre()+p.getPrecio());
+		
 		if(p != null) {
 			request.setAttribute("producto", p);
-			getServletContext().getRequestDispatcher("/JPSs/MostrarProducto.jsp?eid="+eid).forward(request, response);
+			RequestDispatcher rd = request.getRequestDispatcher("/JPSs/MostrarProducto.jsp?eid="+eid);
+			rd.forward(request, response);
+			//response.sendRedirect("http://localhost:8080/PracticaServJSPyJDBC/JPSs/MostrarProducto.jsp?eid="+eid);
 		}else{
 			System.out.println("Sin productos");
 		}
