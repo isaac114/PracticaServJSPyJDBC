@@ -38,15 +38,17 @@ public class JDBCProductoDAO extends JDBCGenericDAO<Producto, Integer> implement
 	}
 
 	@Override
-	public void update(Producto entity) {
+	public void update(Producto p) {
 		// TODO Auto-generated method stub
-		
+		String sql = "UPDATE producto SET pro_nombre='"+p.getNombre()+"', pro_precio='"+p.getPrecio()+"', pro_descripcion='"+p.getDescripcion()+"'"
+				+ "WHERE pro_id="+p.getId();
+		conexionUno.update(sql);
 	}
 
 	@Override
-	public void delete(Producto entity) {
-		// TODO Auto-generated method stub
-		
+	public void delete(Producto producto) {
+		String sql = "DELETE FROM producto WHERE pro_id="+producto.getId();
+		conexionUno.update(sql);
 	}
 
 	@Override
@@ -102,6 +104,5 @@ public class JDBCProductoDAO extends JDBCGenericDAO<Producto, Integer> implement
 		return lista;
 	}
 
-	
 
 }

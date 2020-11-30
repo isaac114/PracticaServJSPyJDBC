@@ -3,7 +3,6 @@ package servelets;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,33 +10,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.DAOFactory;
-import dao.EmpresaDAO;
 import dao.ProductoDAO;
-import modelo.Empresa;
 import modelo.Producto;
 
 /**
- * Servlet implementation class BuscarProducto
+ * Servlet implementation class EliminarProducto
  */
-@WebServlet("/BuscarProducto")
-public class BuscarProducto extends HttpServlet {
+@WebServlet("/EliminarProducto")
+public class EliminarProducto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	String eid = "";
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BuscarProducto() {
+    public EliminarProducto() {
         super();
         // TODO Auto-generated constructor stub
     }
-
-	/**
-	 * @see Servlet#init(ServletConfig)
-	 */
-	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
-	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -45,7 +35,7 @@ public class BuscarProducto extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		eid = request.getParameter("eid");
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/JPSs/BuscarProductoForm.jsp?eid="+eid);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/JPSs/EliminarProducto.jsp?eid="+eid);
 		dispatcher.forward(request, response);
 	}
 
@@ -54,25 +44,14 @@ public class BuscarProducto extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
 		String nombre = request.getParameter("nombre");
-		System.out.println("Si pasa el parameter"+nombre+"--"+eid);
 		ProductoDAO pdao = DAOFactory.getDAOFactory().getProductoDAO();
-		Producto p = pdao.findProducto(nombre, Integer.parseInt(eid));
-		
+		Producto p = new Producto(0,nombre,"","",null,null);
+		p = pdao.findProducto(nombre, Integer.parseInt(eid));
 		if(p != null) {
-			EmpresaDAO emdao = DAOFactory.getDAOFactory().getEmpresaDAO();
-			Empresa em = emdao.findEmpresaID(p.getEmpresa().getId());
-			request.setAttribute("empresa",em);
-			request.setAttribute("producto", p);
-			RequestDispatcher rd = request.getRequestDispatcher("/JPSs/MostrarProducto.jsp?eid="+eid);
-			rd.forward(request, response);
-			//response.sendRedirect("http://localhost:8080/PracticaServJSPyJDBC/JPSs/MostrarProducto.jsp?eid="+eid);
-		}else{
-			System.out.println("Sin productos");
+			pdao.delete(p);
+			response.sendRedirect("http://localhost:8080/PracticaServJSPyJDBC/EliminarProducto?eid="+eid);
 		}
-		
-		//response.sendRedirect("http://localhost:8080/PracticaServJSPyJDBC/BuscarProducto?eid="+eid);
 	}
 
 }

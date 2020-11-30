@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -8,7 +7,7 @@
 	<meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" >    
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href=" http://localhost:8080/PracticaServJSPyJDBC/diseno/css/diseno.css">
+    <link rel="stylesheet" href="http://localhost:8080/PracticaServJSPyJDBC/diseno/css/diseno.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -18,20 +17,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-    <title>Buscar Productos</title>
+    <title>Document</title>
 
 </head>
 <body style="background-color: #575757;">
-<c:set var="p" scope="request" value="${producto}"/>
-<c:set var="e" scope="request" value="${empresa}"/>
-
-<p>ID: ${e.id}</p> 
-<p>Nombre: ${e.nombre}</p> 
 
     <header class="container-fluid" id="cabecera">
         <div class="row" >
             <div class="col-xs-11">
-                <img src=" http://localhost:8080/PracticaServJSPyJDBC/diseno/imagenes/logos2.png"  id="logo">
+                <img src="http://localhost:8080/PracticaServJSPyJDBC/diseno/imagenes/logos2.png"  id="logo">
             </div>
       
         </div>
@@ -42,27 +36,17 @@
 	<div class="container-fluid">
 		<div class="row">
 			<!-- SECCION DE LOS BOTONES DE NAVEGACION -->
-			<div class=col-xs-3>
+			<div class=col-xs-4>
 				<div class="dropdown">
 				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    <small style = "font-size: 15px" >PRODUCTOS</small>
 				  </button>
-				  <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a  style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/AnadirProductos">Agregar Productos</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Eliminar Producto</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Editar Producto</a>
+				  <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+				   <a  style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/AnadirProductos?eid=<%=request.getParameter("eid") %>">Agregar Productos</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/EliminarProducto?eid=<%=request.getParameter("eid") %>">Eliminar Producto</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/EditarProducto?eid=<%=request.getParameter("eid") %>">Editar Producto</a>
 				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/BuscarProducto?eid=<%=request.getParameter("eid") %>">Buscar Productos</a>
 				    <a style = "font-size: 15px" class="dropdown-item" href="#">Listar Producto</a>
-				  </div>
-				</div>
-				<div class="dropdown">
-				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    <small style = "font-size: 15px" >PRODUCTOS</small>
-				  </button>
-				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Action</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Another action</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Something else here</a>
 				  </div>
 				</div>
 				<div class="dropdown">
@@ -87,40 +71,33 @@
 				  </div>
 				</div>
 				-->
-				
-				
+			</div>
+			
+			<div class=col-xs-4>
+				<form method="post" >
+					  <div class="form-group">
+					    <label for="nombre">Nombre del Producto</label>
+					    <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp" placeholder="Ingrese el nombre">
+					  </div>
+					  
+					  <button type="submit" class="btn btn-primary">Buscar</button>
+				</form>
+			</div>
 			
 		</div>
 		
-		<div class=col-xs-4>
-				<form >
-					  <div class="form-group">
-					    <label for="nombre">Nombre del Producto</label>
-					    <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp" placeholder="Nombre: ${p.nombre}">
-					  </div>
-					  <div class="form-group">
-					    <label for="descripcion">Descripcion</label>
-					    <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="${p.descripcion}">
-					  </div>
-					  <div class="form-group">
-					    <label for="precio">Precio</label>
-					    <input type="text" class="form-control" id="precio" name="precio" placeholder="${p.precio}">
-					  </div>
-					  <div class="form-group">
-					    <label for="cate">Categoria</label>
-					    <input type="text" class="form-control" id="cate" name="cate" placeholder=" ${p.categoria.nombre}">
-					  </div>
-					  <div class="form-group">
-					    <label for="empresa">Empresa</label>
-					    <input type="text" class="form-control" id="empresa" name="empresa" placeholder=" ${e.nombre}">
-					  </div>
-					 
-					  <button type="submit" class="btn btn-primary">Submit</button>
-				</form>
-			</div>
+		
+		
+		
+		
 	</div>
     
     
+    <h2>ESTOY EN LA VENTANA DEL ADMINISTRADOR</h2>
+    
+
+
+
     
    
 

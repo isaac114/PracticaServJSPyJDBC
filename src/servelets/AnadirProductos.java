@@ -53,7 +53,7 @@ public class AnadirProductos extends HttpServlet {
 		String empresa = request.getParameter("empresa");
 		System.out.println("Datos dEL producto = "+nombre+"-"+precio+"-"+descripcion+"-"+categoria+"-"+empresa);
 		Categoria cat = new Categoria(1,"");
-		Empresa em = new Empresa(1, "", "", "");
+		Empresa em = new Empresa(Integer.parseInt(eid), "", "", "");
 		Producto pro = new Producto(0, nombre, precio, descripcion, cat, em);
 		ProductoDAO productoDao = DAOFactory.getDAOFactory().getProductoDAO();
 		productoDao.create(pro);
