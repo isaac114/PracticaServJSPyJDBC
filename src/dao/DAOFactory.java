@@ -19,6 +19,9 @@ public abstract class DAOFactory {
     //EDITADO POR: JORGE YELA VELEZ.
     public abstract CabeceraDAO getCabeceraDAO();
     
+    //EDITADO POR: JORGE YELA VELEZ. 
+    public abstract DetalleDAO getDetalleDAO();
+    
     /*
      *EDITADO POR: ISAAC CHAVEZ
      *METODO ABSTRACTO getProductoDAO() 

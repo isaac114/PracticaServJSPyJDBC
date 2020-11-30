@@ -1,6 +1,7 @@
 package servelets;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -9,7 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import modelo.Producto;
+import dao.*;
+import modelo.*;
 
 /**
  * Servlet implementation class ProcesarCompra
@@ -18,13 +20,28 @@ import modelo.Producto;
 public class ProcesarCompra extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String carrito;
+	private Detalle detalle;
+	private DetalleDAO detalleDao;
+	private Cabecera cabecera;
+	private CabeceraDAO cabeceraDao;
+	private Date fecha;
+	private Producto producto;
+	private ProductoDAO productoDao;
+	private List<Producto> listaProducto;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
     public ProcesarCompra() {
-        super();
-        // TODO Auto-generated constructor stub
+        
+    	cabeceraDao = DAOFactory.getDAOFactory().getCabeceraDAO();
+    	cabecera = new Cabecera();
+    	fecha = new Date();
+    	detalleDao = DAOFactory.getDAOFactory().getDetalleDAO();
+    	detalle = new Detalle();
+    	productoDao = DAOFactory.getDAOFactory().getProductoDAO();
+    	producto = new Producto();
+    	
     }
 
 	/**
@@ -40,8 +57,35 @@ public class ProcesarCompra extends HttpServlet {
 		String stringNew = carrito;
 		String[] parts = stringNew.split(",");
 		
-		for(int i=0;i<=parts.length-1;i++) {
+		for(int i=1;i<=parts.length-1;i++) {
 			System.out.println("item: " + parts[i]);
+		}
+		
+		try {
+			
+			int codigoDual = 0;
+			
+			
+			
+			
+			
+			for(int i=1;i<=parts.length-1;i++) {
+				cabecera.setId(codigoDual);
+				cabecera.setFecha(fecha);
+				cabecera.setEstado("E");
+				cabeceraDao.create(cabecera);
+				
+				detalle.setId(0);
+				detalle.setId_cabecera(codigoDual);
+				//detalle.setId_producto(id_producto);
+			}
+			
+			System.out.println("Compra cabecera registrada con exito !!");
+			
+		}catch(Exception e) {
+			
+			System.out.println("Error: " + e.getMessage());
+			
 		}
 		
 	}
