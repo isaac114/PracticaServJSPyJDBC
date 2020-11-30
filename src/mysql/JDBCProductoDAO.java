@@ -2,6 +2,7 @@ package mysql;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import dao.ProductoDAO;
@@ -78,6 +79,27 @@ public class JDBCProductoDAO extends JDBCGenericDAO<Producto, Integer> implement
 			System.out.println(">>>WARNING (JDBCPoducto:findProducto()): " + e.getMessage());
 		}
 		return p;
+	}
+	
+	public List<Producto> listarPorEmpresa(int id){
+		List<Producto> lista = new ArrayList<Producto>();
+		ResultSet rs = conexionUno.query("SELECT * FROM producto WHERE Empresa_em_id="+id);
+		try {
+			while(rs.next()) {
+				int idp = rs.getInt("pro_id");
+				String nombre = rs.getString("pro_nombre");
+				String precio = rs.getString("pro_precio");
+				String descrip = rs.getString("pro_descripcion");
+				Categoria cat = new Categoria(rs.getInt("Categoria_cat_id"), "");
+				Producto p = new Producto(idp, nombre, precio, descrip, cat, null);
+				if(p != null) {
+					lista.add(p);
+				}
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
 	}
 
 	
