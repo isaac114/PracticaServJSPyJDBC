@@ -23,10 +23,6 @@
 </head>
 <body style="background-color: #575757;">
 <c:set var="p" scope="request" value="${producto}"/>
-<c:set var="e" scope="request" value="${empresa}"/>
-
-<p>ID: ${e.id}</p> 
-<p>Nombre: ${e.nombre}</p> 
 
     <header class="container-fluid" id="cabecera">
         <div class="row" >
@@ -93,10 +89,10 @@
 		</div>
 		
 		<div class=col-xs-4>
-				<form >
+				<form method="post" action="/PracticaServJSPyJDBC/EditarP?eid=<%=request.getParameter("eid")%>">
 					  <div class="form-group">
 					    <label for="nombre">Nombre del Producto</label>
-					    <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp" placeholder="Nombre: ${p.nombre}">
+					    <input type="text" class="form-control" id="nombre" name="nombrep"  placeholder="${p.nombre}">
 					  </div>
 					  <div class="form-group">
 					    <label for="descripcion">Descripcion</label>
@@ -106,16 +102,8 @@
 					    <label for="precio">Precio</label>
 					    <input type="text" class="form-control" id="precio" name="precio" placeholder="${p.precio}">
 					  </div>
-					  <div class="form-group">
-					    <label for="cate">Categoria</label>
-					    <input type="text" class="form-control" id="cate" name="cate" placeholder=" ${p.categoria.nombre}">
-					  </div>
-					  <div class="form-group">
-					    <label for="empresa">Empresa</label>
-					    <input type="text" class="form-control" id="empresa" name="empresa" placeholder=" ${e.nombre}">
-					  </div>
-					 
-					  <button type="submit" class="btn btn-primary">Submit</button>
+			
+					  <button type="submit" class="btn btn-primary">Editar</button>
 				</form>
 			</div>
 	</div>

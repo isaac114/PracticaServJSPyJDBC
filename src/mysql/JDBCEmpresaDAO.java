@@ -68,6 +68,28 @@ public class JDBCEmpresaDAO extends JDBCGenericDAO<Empresa, Integer> implements 
 		
 	}
 
+	@Override
+	public Empresa findEmpresaID(int id) {
+		// TODO Auto-generated method stub
+		Empresa emp = null;
+		ResultSet rs = conexionUno.query("SELECT * FROM Empresa WHERE em_id = "+id);
+		try {
+            if (rs != null && rs.next()) {
+                int ide = rs.getInt("em_id");
+                String ruc =  rs.getString("em_ruc");
+                String name = rs.getString("em_nombre");
+                String direccion = rs.getString("em_direccion");
+                emp = new Empresa(ide, ruc, name, direccion);
+                
+            }
+        } catch (SQLException e) {
+            System.out.println(">>>WARNING (JDBCEmpresaDAO-->): " + e.getMessage());
+        }
+		
+		return emp;
+		
+	}
+
 
 
 
