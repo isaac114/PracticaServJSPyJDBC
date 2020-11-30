@@ -32,13 +32,25 @@
 	
 	<div id="resultado"></div>
 	
+	<div id="array"></div>
+	
+	<form name="mandar">
+		<button name="comprar" type="button" class="btn btn-primary mb-2" onclick="enviarParametros()">Comprar</button>
+	</form>
+	
 	<script>
+	var colores = ['rojo'];
 		$(function(){
 			$('table tr td').click(function(){
 				var contenido = $(this).html();
 				$('#resultado').html('Contenido: '+contenido);
+				colores.push(contenido);
+				$('#array').html('Array: ' + colores);
 			});
 		});
+		function enviarParametros() {
+			window.location.assign('http://localhost:8080/PracticaServJSPyJDBC/ProcesarCompra?carrito='+colores);
+		}
 	</script>
 </body>
 </html>
