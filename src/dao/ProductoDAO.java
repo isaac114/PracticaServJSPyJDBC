@@ -9,5 +9,5 @@ public interface ProductoDAO extends GenericDAO<Producto, Integer> {
 
 	public abstract Producto findProducto(String nombre, int id);
 	public abstract List<Producto> buscarPorEmpresa(int id);
-
+	public abstract Producto buscarPorDescripcion(String descr);
 }

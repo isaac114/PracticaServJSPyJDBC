@@ -104,5 +104,32 @@ public class JDBCProductoDAO extends JDBCGenericDAO<Producto, Integer> implement
 		return lista;
 	}
 
+	
+	public Producto buscarPorDescripcion(String descr){
+		Producto p = null;
+		String sql = "SELECT * FROM producto WHERE pro_descripcion LIKE '"+descr+"'";
+		Empresa emp = new Empresa(0,"","","");
+		Categoria cate = new Categoria(0,"");
+		ResultSet rs = conexionDos.query(sql);
+		try {
+			if (rs != null && rs.next()) {
+                int idp = rs.getInt("pro_id");
+                String nombrep = rs.getString("pro_nombre");
+                String precio  =  rs.getString("pro_precio");
+                String descripcion = rs.getString("pro_descripcion");
+                int empresaid = rs.getInt("Empresa_em_id");
+                int cateid = rs.getInt("Categoria_cat_id");
+                emp.setId(empresaid);
+                cate.setId(cateid);
+                p = new Producto(idp, nombrep, precio, descripcion, cate, emp);
+                
+            }
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(">>>WARNING (JDBCPoducto:buscarPorDescripcion): " + e.getMessage());
+		}
+		return p;
+		
+	}
 
 }
