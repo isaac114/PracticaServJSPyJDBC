@@ -80,8 +80,9 @@ public class JDBCProductoDAO extends JDBCGenericDAO<Producto, Integer> implement
 		}
 		return p;
 	}
-	
-	public List<Producto> listarPorEmpresa(int id){
+
+	@Override
+	public List<Producto> buscarPorEmpresa(int id) {
 		List<Producto> lista = new ArrayList<Producto>();
 		ResultSet rs = conexionUno.query("SELECT * FROM producto WHERE Empresa_em_id="+id);
 		try {
@@ -99,7 +100,7 @@ public class JDBCProductoDAO extends JDBCGenericDAO<Producto, Integer> implement
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		return null;
+		return lista;
 	}
 
 	
