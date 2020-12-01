@@ -13,14 +13,11 @@ public abstract class DAOFactory {
     
     public abstract AdministradorDAO getAdminDAO();
     
+    //EDITADO POR: JORGE YELA VELEZ. 
+    public abstract CompraDAO getCompraDAO();
+    
     //EDITADO POR: JORGE YELA VELEZ.
     public abstract UsuarioDAO getUsuarioDAO();
-    
-    //EDITADO POR: JORGE YELA VELEZ.
-    public abstract CabeceraDAO getCabeceraDAO();
-    
-    //EDITADO POR: JORGE YELA VELEZ. 
-    public abstract DetalleDAO getDetalleDAO();
     
     /*
      *EDITADO POR: ISAAC CHAVEZ

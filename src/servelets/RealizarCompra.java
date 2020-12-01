@@ -1,16 +1,13 @@
 package servelets;
 
-import java.io.IOException; 
+import java.io.IOException;  
 import java.util.Date;
 import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import dao.CabeceraDAO;
-import modelo.Cabecera;
 import modelo.Producto;
 import modelo.Usuario;
 import dao.DAOFactory;
@@ -25,8 +22,6 @@ public class RealizarCompra extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 	java.util.Date fecha;
-	private CabeceraDAO cabeceraDao;
-	private Cabecera cabecera;
 	private Usuario usuario;
 	private UsuarioDAO usuarioDao;
 	private Producto producto;
@@ -35,8 +30,6 @@ public class RealizarCompra extends HttpServlet {
        
     public RealizarCompra() {
         
-    	cabeceraDao = DAOFactory.getDAOFactory().getCabeceraDAO();
-    	cabecera = new Cabecera();
     	fecha = new Date();
     	usuarioDao = DAOFactory.getDAOFactory().getUsuarioDAO();
     	usuario = new Usuario();

@@ -1,28 +1,28 @@
 package modelo;
 
 import java.io.Serializable;
-//import java.sql.Date;
-import java.util.Date;
 
-public class Cabecera implements Serializable{
+public class Compra implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
 	private int id;
-	private Date fecha;
+	private String fecha;
 	private String estado;
 	private int empresa_id;
+	private int producto_id;
 	
-	public Cabecera() {
+	public Compra() {
 		//CONSTRUCTOR OBLIGATORIO. 
 	}
 	
-	public Cabecera(int id, Date fache, String estado, int empresa_id) {
+	public Compra(int id, String fecha, String estado, int empresa_id, int producto_id) {
 		super();
 		this.id = id;
 		this.fecha = fecha;
 		this.estado = estado;
 		this.empresa_id = empresa_id;
+		this.producto_id = producto_id;
 	}
 
 	public int getId() {
@@ -33,11 +33,11 @@ public class Cabecera implements Serializable{
 		this.id = id;
 	}
 
-	public Date getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 
@@ -57,9 +57,18 @@ public class Cabecera implements Serializable{
 		this.empresa_id = empresa_id;
 	}
 
-	@Override
-	public String toString() {
-		return "Cabecera [id=" + id + ", fecha=" + fecha + ", estado=" + estado + ", empresa_id=" + empresa_id + "]";
+	public int getProducto_id() {
+		return producto_id;
 	}
 
+	public void setProducto_id(int producto_id) {
+		this.producto_id = producto_id;
+	}
+
+	@Override
+	public String toString() {
+		return "Compra [id=" + id + ", fecha=" + fecha + ", estado=" + estado + ", empresa_id=" + empresa_id
+				+ ", producto_id=" + producto_id + "]";
+	}
+	
 }

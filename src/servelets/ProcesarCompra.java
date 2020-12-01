@@ -1,6 +1,7 @@
 package servelets;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -20,33 +21,23 @@ import modelo.*;
 public class ProcesarCompra extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String carrito;
-	private Detalle detalle;
-	private DetalleDAO detalleDao;
-	private Cabecera cabecera;
-	private CabeceraDAO cabeceraDao;
 	private Date fecha;
 	private Producto producto;
 	private ProductoDAO productoDao;
 	private List<Producto> listaProducto;
+	private Compra compra;
+	private CompraDAO compraDao;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public ProcesarCompra() {
         
-    	cabeceraDao = DAOFactory.getDAOFactory().getCabeceraDAO();
-    	cabecera = new Cabecera();
     	fecha = new Date();
-    	detalleDao = DAOFactory.getDAOFactory().getDetalleDAO();
-    	detalle = new Detalle();
     	productoDao = DAOFactory.getDAOFactory().getProductoDAO();
     	producto = new Producto();
+    	compraDao = DAOFactory.getDAOFactory().getCompraDAO();
+    	compra = new Compra();
     	
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		System.out.println("ingreso al get");
@@ -57,57 +48,46 @@ public class ProcesarCompra extends HttpServlet {
 		String stringNew = carrito;
 		String[] parts = stringNew.split(",");
 		
-		/*for(int i=1;i<=parts.length-1;i++) {
-			System.out.println("item: " + parts[i]);
-		}*/
-		
 		try {
 			
 			for(int i=1;i<=parts.length-1;i++) {
 				
-				/*cabecera.setId(0);
-				cabecera.setFecha(fecha);
-				cabecera.setEstado("E");
-				cabecera.setEmpresa_id(i);
-				cabeceraDao.create(cabecera);*/
-				
 				//BUSCAR ID PRODUCTO. 
 				int codigo_producto_recuperado=0;
 				int codigo_empresa_producto=0;
+				
 				producto = productoDao.buscarPorDescripcion(parts[i]);
+				
 				if(producto != null) {
+					
 					codigo_producto_recuperado = producto.getId();
 					codigo_empresa_producto = producto.getEmpresa().getId();
-					//CREANDO COMPRA CABECERA. 
-					cabecera.setId(0);
-					cabecera.setFecha(fecha);
-					cabecera.setEstado("E");
-					cabecera.setEmpresa_id(codigo_empresa_producto);
+					
+					String MiFecha = new SimpleDateFormat("yyyy-MM-dd").format(fecha);
+														
+					//CREANDO COMPRA.
+					compra.setId(0);
+					compra.setFecha(MiFecha);
+					compra.setEstado("E");
+					compra.setEmpresa_id(codigo_empresa_producto);
+					compra.setProducto_id(codigo_producto_recuperado);
+					compraDao.create(compra);
+					
+					System.out.println("Compra registrada con existo, Servlet : ProcesarCompra.java");
+					
 				} else {
+					
 					System.out.println("Error al recuperar el producto, Servlet : ProcesarCompra.java");
+					
 				}
 				
-				/*detalle.setId(0);
-				detalle.setId_cabecera(0);
-				//detalle.setId_producto(id_producto);*/
 			}
-			
-			System.out.println("Compra cabecera registrada con exito !!");
 			
 		}catch(Exception e) {
 			
 			System.out.println("Error: " + e.getMessage());
 			
 		}
-		
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		System.out.println("ingreso al post");
 		
 	}
 

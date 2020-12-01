@@ -1,12 +1,11 @@
 package dao;
 
-import modelo.Empresa;
+import modelo.Empresa;  
 import mysql.JDBCAdministradorDAO;
-import mysql.JDBCCabeceraDAO;
-import mysql.JDBCDetalleDAO;
 import mysql.JDBCEmpresaDAO;
 import mysql.JDBCProductoDAO;
 import mysql.JDBCUsuarioDAO;
+import mysql.JDBCCompraDAO;
 
 public  class JDBCDAOFactory extends DAOFactory {
 
@@ -43,26 +42,15 @@ public  class JDBCDAOFactory extends DAOFactory {
 	}
 
 	@Override
-	public CabeceraDAO getCabeceraDAO() {
-		// TODO Auto-generated method stub
-		return new JDBCCabeceraDAO();
-	}
-
-	@Override
 	public EmpresaDAO getEmpresaDAO() {
 		// TODO Auto-generated method stub
 		return new JDBCEmpresaDAO();
 	}
 
 	@Override
-	public DetalleDAO getDetalleDAO() {
+	public CompraDAO getCompraDAO() {
 		// TODO Auto-generated method stub
-		return new JDBCDetalleDAO();
+		return new JDBCCompraDAO();
 	}
-	
-	
-	
-	
-	
 	
 }
