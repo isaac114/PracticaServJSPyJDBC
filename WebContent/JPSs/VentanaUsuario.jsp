@@ -21,6 +21,7 @@
     <STYLE type="text/css">
   		H2 { text-align: center}
   		P { text-align: center}
+  		A { padding-left: 1150px}
  	</STYLE>
 
 </head>
@@ -32,6 +33,7 @@
                 <img src="http://localhost:8080/PracticaServJSPyJDBC/diseno/imagenes/l1.png"  id="logo">
             </div>
         </div>
+        <a style="color: white; font-size: 25px;" href="http://localhost:8080/PracticaServJSPyJDBC/ServletDestroy">Cerrar Sesion</a>
     </header>
     
 	<div class="container-fluid">
@@ -44,7 +46,7 @@
 				  	<div  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 				    	<a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/RealizarCompra?correo=<%=request.getParameter("correo") %>&contra=<%=request.getParameter("contra")%>">Realizar Pedido</a>
 				    	<a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/ComprasUsuario?correo=<%=request.getParameter("correo") %>&contra=<%=request.getParameter("contra")%>">Visualizar Compras</a>
-				    	<a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/CerrarSesion">Cerrar Sesion</a>
+				    	<a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/ServletDestroy">Cerrar Sesion</a>
 				  	</div>
 				</div>
 			</div>
@@ -69,7 +71,7 @@
 	<p style="color: white; font-size: 25px;" id="label"><strong style="color: rgb(236,72,113);">Apellido:</strong> ${apellido}</p>
 	<p style="color: white; font-size: 25px;" id="label"><strong style="color: rgb(236,72,113);">Cedula:</strong> ${cedula}</p>
 	<p style="color: white; font-size: 25px;" id="label"><strong style="color: rgb(236,72,113);">Correo Electronico:</strong> ${correo}</p>
-
+	
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

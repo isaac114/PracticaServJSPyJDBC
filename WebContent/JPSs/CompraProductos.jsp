@@ -40,7 +40,7 @@
 					<td scope="col" style="font-size: 25px"><strong>Id</strong></td>
 					<td scope="col" style="font-size: 25px"><strong>Nombre</strong></td>
 					<td scope="col" style="font-size: 25px"><strong>Precio</strong></td>
-					<td scope="col" style="font-size: 25px"><strong>Descripci�n</strong></td>
+					<td scope="col" style="font-size: 25px"><strong>Descripcion</strong></td>
 				</tr>
 				<c:forEach var="p" items="${lista}">
 					<tr scope="row">

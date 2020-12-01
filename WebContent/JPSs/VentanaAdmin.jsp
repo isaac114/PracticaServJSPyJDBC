@@ -18,7 +18,9 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
     <title>Ventana Administrador</title>
-
+	<STYLE type="text/css">
+  		A { padding-left: 1150px}
+ 	</STYLE>
 </head>
 <body style="background-color: #575757;">
 
@@ -88,7 +90,7 @@
 
 
 
-    
+    <a style="color: white; font-size: 25px;" href="http://localhost:8080/PracticaServJSPyJDBC/ServletDestroy">Cerrar Sesion</a>
    
 
     <!-- Latest compiled and minified JavaScript -->
