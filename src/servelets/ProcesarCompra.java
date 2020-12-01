@@ -60,7 +60,7 @@ public class ProcesarCompra extends HttpServlet {
 			System.out.println("Usuario recuperado: " + user.getNombres() + " " + user.getApellidos());
 			
 			
-			for(int i=1;i<=parts.length-1;i++) {
+			for(int i=0;i<=parts.length-1;i++) {
 				
 				//BUSCAR ID PRODUCTO. 
 				int codigo_producto_recuperado=0;

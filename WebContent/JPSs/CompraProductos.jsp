@@ -68,13 +68,13 @@
 	
 	
 	<script>
-	var colores = ['rojo'];
+	var colores = [];
 		$(function(){
 			$('table tr td').click(function(){
 				var contenido = $(this).html();
 				//$('#resultado').html('Contenido: '+contenido);
 				colores.push(contenido);
-				$('#array').html('Array: ' + colores);
+				$('#array').html('Carrito: ' + colores);
 			});
 		});
 		function enviarParametros() {

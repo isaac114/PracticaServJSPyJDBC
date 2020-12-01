@@ -1,3 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
 <head>
 	<meta charset="ISO-8859-1">
 	<meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" >    
@@ -16,32 +22,32 @@
     <title>Mis Compras</title>
 
 </head>
-<body>
+<body style="background-color: #575757;">
 
-    <!-- <header class="container-fluid" id="cabecera">
+    <header class="container-fluid" id="cabecera">
         <div class="row" >
             <div class="col-xs-11">
                 <img src="http://localhost:8080/PracticaServJSPyJDBC/diseno/imagenes/l1.png"  id="logo">
             </div>
         </div>
-    </header> -->
+    </header>
     
 	<c:set var="lista" scope="request" value="${compras}" />
 	<h1>Lista de Compras</h1>
 	
-	<table class="table">
+	<table class="table" style="color: white;">
 		<tr>
-			<td><strong>Id</strong></td>
-			<td><strong>Fecha</strong></td>
-			<td><strong>Estado</strong></td>
-			<td><strong>Producto</strong></td>
+			<td scope="col" style="font-size: 25px"><strong>Id</strong></td>
+			<td scope="col" style="font-size: 25px"><strong>Fecha</strong></td>
+			<td scope="col" style="font-size: 25px"><strong>Estado</strong></td>
+			<td scope="col" style="font-size: 25px"><strong>Producto</strong></td>
 		</tr>
 		<c:forEach var="c" items="${lista}">
-			<tr>
-				<td>${c.id}</td>
-				<td>${c.fecha}</td>
-				<td>${c.estado}</td>
-				<td>${c.producto_id}</td>
+			<tr scope="row">
+				<td style="font-size: 18px">${c.id}</td>
+				<td style="font-size: 18px">${c.fecha}</td>
+				<td style="font-size: 18px">${c.estado}</td>
+				<td style="font-size: 18px">${c.producto_id}</td>
 			</tr>
 		</c:forEach>
 	</table>
