@@ -12,7 +12,10 @@
 <body>
 	<c:set var="lista" scope="request" value="${productos}" />
 	<h1>Lista de Productos</h1>
-
+	
+	<c:set var="correo" scope="request" value="${param.correo}" />
+	<c:set var="contra" scope="request" value="${param.contra}" />
+	
 	<table>
 		<tr>
 			<td><strong>Id</strong></td>
@@ -33,7 +36,7 @@
 	<div id="resultado"></div>
 	
 	<div id="array"></div>
-	
+		
 	<form name="mandar">
 		<button name="comprar" type="button" class="btn btn-primary mb-2" onclick="enviarParametros()">Comprar</button>
 	</form>
@@ -43,13 +46,36 @@
 		$(function(){
 			$('table tr td').click(function(){
 				var contenido = $(this).html();
-				$('#resultado').html('Contenido: '+contenido);
+				//$('#resultado').html('Contenido: '+contenido);
 				colores.push(contenido);
 				$('#array').html('Array: ' + colores);
 			});
 		});
 		function enviarParametros() {
-			window.location.assign('http://localhost:8080/PracticaServJSPyJDBC/ProcesarCompra?carrito='+colores);
+			//const valores = window.location.search;
+			//const urlParams = new URLSearchParams(valores);
+			//var correo = urlParams.keys();
+			var email = parametroURL('correo');
+			$('#resultado').html('Contenido: '+ email);
+			window.location.assign('http://localhost:8080/PracticaServJSPyJDBC/ProcesarCompra?carrito='+colores+"&correo="+email);
+		}
+		function parametroURL(_par) {
+			  var _p = null;
+			  if (location.search) location.search.substr(1).split("&").forEach(function(pllv) {
+			  	var s = pllv.split("="), //separamos llave/valor
+			    ll = s[0],
+			    v = s[1] && decodeURIComponent(s[1]); //valor hacemos encode para prevenir url encode
+			    if (ll == _par) { //solo nos interesa si es el nombre del parametro a buscar
+			      	if(_p==null){
+			      		_p=v; //si es nula, quiere decir que no tiene valor, solo textual
+			      	}else if(Array.isArray(_p)){
+			      		_p.push(v); //si ya es arreglo, agregamos este valor
+			      	}else{
+			      		_p=[_p,v]; //si no es arreglo, lo convertimos y agregamos este valor
+			      	}
+			    }
+			});
+			return _p;
 		}
 	</script>
 </body>
