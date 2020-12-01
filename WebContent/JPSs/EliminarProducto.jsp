@@ -37,6 +37,7 @@
 		<div class="row">
 			<!-- SECCION DE LOS BOTONES DE NAVEGACION -->
 			<div class=col-xs-4>
+			<img style="height: 150px; width: 200px; padding-bottom: 20px;" alt="" src="http://localhost:8080/PracticaServJSPyJDBC/diseno/imagenes/adm.png">
 				<div class="dropdown">
 				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    <small style = "font-size: 15px" >PRODUCTOS</small>

@@ -44,6 +44,7 @@ public class BuscarProducto extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		eid = request.getParameter("eid");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/JPSs/BuscarProductoForm.jsp?eid="+eid);
 		dispatcher.forward(request, response);
 	}
