@@ -87,4 +87,10 @@ public class JDBCCompraDAO extends JDBCGenericDAO<Compra, Integer> implements Co
 		return null;
 	}
 
+	@Override
+	public Compra busquedaU(String correo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -90,6 +90,15 @@ public class JDBCEmpresaDAO extends JDBCGenericDAO<Empresa, Integer> implements 
 		
 	}
 
+	/*
+	 * EIDTADO POR: JORGE YELA VELEZ.
+	 */
+	@Override
+	public Empresa busquedaU(String correo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 
 

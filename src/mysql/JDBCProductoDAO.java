@@ -132,4 +132,13 @@ public class JDBCProductoDAO extends JDBCGenericDAO<Producto, Integer> implement
 		
 	}
 
+	/*
+	 * EDITADO POR: JORGE YELA VELEZ. 
+	 */
+	@Override
+	public Producto busquedaU(String correo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

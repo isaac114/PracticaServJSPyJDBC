@@ -69,4 +69,13 @@ public class JDBCAdministradorDAO extends JDBCGenericDAO<Administrador, Integer>
 		return admin;
 	}
 
+	/*
+	 * EDITADO POR: JORGE YELA VELEZ
+	 */
+	@Override
+	public Administrador busquedaU(String correo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

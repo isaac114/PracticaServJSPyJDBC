@@ -9,6 +9,8 @@ public interface GenericDAO<T, ID> {
 	public void create(T entity);
 
 	public T read(ID id);
+	
+	public T busquedaU(String correo);
 
 	public void update(T entity);
 
