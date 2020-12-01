@@ -43,12 +43,13 @@
 				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    <small style = "font-size: 15px" >PRODUCTOS</small>
 				  </button>
-				  <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a  style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/AnadirProductos">Agregar Productos</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Eliminar Producto</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Editar Producto</a>
+				  <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+				    <a  style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/AnadirProductos?eid=<%=request.getParameter("eid") %>">Agregar Productos</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/EliminarProducto?eid=<%=request.getParameter("eid") %>">Eliminar Producto</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/EditarProducto?eid=<%=request.getParameter("eid") %>">Editar Producto</a>
 				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/BuscarProducto?eid=<%=request.getParameter("eid") %>">Buscar Productos</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Listar Producto</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/ListarProductos?eid=<%=request.getParameter("eid") %>">Listar Producto</a>
+				  </div>
 				  </div>
 				</div>
 				<div class="dropdown">
@@ -89,7 +90,7 @@
 		</div>
 		
 		<div class="col-xs-5" >
-			<table class="table table-hover">
+			<table class="table table-striped">
 			<tr>
 				<td scope="col"><strong>Id</strong></td>
 				<td scope="col"><strong>Nombre</strong></td>
