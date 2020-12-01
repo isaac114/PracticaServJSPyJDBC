@@ -1,6 +1,5 @@
 package Filtros;
 
-
 import java.io.IOException;  
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -13,16 +12,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebFilter({"/JPSs/VentanaUsuario.jsp","/JPSs/VentanaAdmin.jsp","/JPSs/Pedidos.jsp","/JPSs/MostrarProductoEditar.jsp","/JPSs/MostrarProducto.jsp","/JPSs/MisCompras.jsp","/JPSs/ListarRequisitos.jsp","/JPSs/ListarProductos.jsp","/JPSs/EliminarProducto.jsp","/JPSs/EditarProducto.jsp","/JPSs/CompraProductos.jsp","/JPSs/BuscarProductoForm.jsp","/JPSs/agregarProducto.jsp"})
-public class SesionActiva implements Filter {
+@WebFilter({"/JPSs/VentanaAdmin.jsp","/JPSs/Pedidos.jsp","/JPSs/MostrarProductoEditar.jsp","/JPSs/MostrarProducto.jsp","/JPSs/ListarRequisitos.jsp","/JPSs/ListarProductos.jsp","/JPSs/EliminarProducto.jsp","/JPSs/EditarProducto.jsp","/JPSs/BuscarProductoForm.jsp","/JPSs/agregarProducto.jsp"})
+public class SesionAdmin implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		HttpSession sesion = ((HttpServletRequest) request).getSession();
-		if(sesion.getAttribute("Sesion") != null) {
-			System.out.println("Se ha iniciado sesion correctamente (Filter: Filtro.java - Session: Ok), redireccionando al Servlet Proceso.java...");
+		if(sesion.getAttribute("SesionAdmin") != null) {
+			System.out.println("Se ha iniciado sesion correctamente (Filter: SesionAdmin.java - Session: Ok), redireccionando al Servlet Proceso.java...");
 			chain.doFilter(request, response);
 		} else {
-			System.out.println("No se ha iniciado sesion (Filter: Filtro.java - Session: Null), redireccionando al formulario de inicio de sesion...");
+			System.out.println("No se ha iniciado sesion (Filter: SesionAdmin.java - Session: Null), redireccionando al formulario de inicio de sesion...");
 			((HttpServletResponse) response).sendRedirect("http://localhost:8080/PracticaServJSPyJDBC/public/login.html");
 		}
 	}
