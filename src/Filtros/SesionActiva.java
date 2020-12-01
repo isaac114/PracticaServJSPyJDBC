@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebFilter({"/JPSs/VentanaUsuario.jsp","/JPSs/VentanaAdmin.jsp","/JPSs/Pedidos.jsp","/JPSs/MostrarProductoEditar.jsp","/JPSs/MostrarProducto.jsp","/JPSs/MisCompras.jsp","/JPSs/ListarRequisitos.jsp","/JPSs/ListarProductos.jsp","/JPSs/EliminarProducto.jsp","/JPSs/EditarProducto.jsp","/JPSs/CompraProductos.jsp","/JPSs/BuscarProductoForm.jsp","/JPSs/agregarProducto.jsp"})
+@WebFilter({"/JPSs/VentanaUsuario.jsp","/JPSs/MisCompras.jsp","/JPSs/CompraProductos.jsp"})
 public class SesionActiva implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {

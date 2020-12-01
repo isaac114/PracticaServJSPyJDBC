@@ -16,28 +16,28 @@
     <title>Mis Compras</title>
 
 </head>
-<body style="background-color: #575757;">
+<body>
 
-    <header class="container-fluid" id="cabecera">
+    <!-- <header class="container-fluid" id="cabecera">
         <div class="row" >
             <div class="col-xs-11">
                 <img src="http://localhost:8080/PracticaServJSPyJDBC/diseno/imagenes/l1.png"  id="logo">
             </div>
         </div>
-    </header>
+    </header> -->
     
 	<c:set var="lista" scope="request" value="${compras}" />
 	<h1>Lista de Compras</h1>
 	
 	<table class="table">
 		<tr>
-			<td scope="col"><strong>Id</strong></td>
-			<td scope="col"><strong>Fecha</strong></td>
-			<td scope="col"><strong>Estado</strong></td>
-			<td scope="col"><strong>Producto</strong></td>
+			<td><strong>Id</strong></td>
+			<td><strong>Fecha</strong></td>
+			<td><strong>Estado</strong></td>
+			<td><strong>Producto</strong></td>
 		</tr>
 		<c:forEach var="c" items="${lista}">
-			<tr scope="row">
+			<tr>
 				<td>${c.id}</td>
 				<td>${c.fecha}</td>
 				<td>${c.estado}</td>

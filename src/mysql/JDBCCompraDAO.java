@@ -97,7 +97,8 @@ public class JDBCCompraDAO extends JDBCGenericDAO<Compra, Integer> implements Co
 	@Override
 	public List<Compra> read(int id) {
 		List<Compra> lista = new ArrayList<Compra>();
-		ResultSet rs = conexionUno.query("SELECT * FROM Compra WHERE Usuario_us_id LIKE "+"'"+id+"'");
+		ResultSet rs = conexionUno.query("SELECT * FROM Compra WHERE Usuario_us_id LIKE "+id);
+		System.out.println("Ingresando al metodo List<Compra> read, buscando las compras realizadas");
 		try {
 			while(rs.next()) {
 				int idN = rs.getInt("cc_id");
@@ -109,6 +110,7 @@ public class JDBCCompraDAO extends JDBCGenericDAO<Compra, Integer> implements Co
 				Compra miCompra = new Compra(idN,fecha,estado,id_empresa_N,id_producto,id_usuario);
 				if(miCompra != null) {
 					lista.add(miCompra);
+					System.out.println("Lista de compras retornada");
 				}
 			}
 		} catch(SQLException e) {

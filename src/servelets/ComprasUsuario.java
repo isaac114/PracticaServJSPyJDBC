@@ -50,10 +50,13 @@ public class ComprasUsuario extends HttpServlet {
 			
 			request.setAttribute("compras", listaCompra);
 			
+			System.out.println("Compras retornadas a la ventana");
+			
 			url = "/JPSs/MisCompras.jsp";
 			
 		}catch(Exception e) {
 			System.out.println("Error: " + e.getMessage());
+			url = "/JPSs/VentanaUsuario.jsp";
 		}
 		getServletContext().getRequestDispatcher(url).forward(request, response);
 	}
