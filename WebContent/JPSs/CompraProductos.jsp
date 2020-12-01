@@ -35,7 +35,7 @@
 	<div class="row" style="color: white;">
 		<div class="col align-self-start"></div>
 		<div>
-			<h2 style="font-size: 30px; padding-bottom: 30px">Comprar Porductos</h2>
+			<h2 style="font-size: 30px">Comprar Productos</h2>
 			<div style="width: 30px;"></div>
 			<table class="table" style="color: white;">
 				<tr>

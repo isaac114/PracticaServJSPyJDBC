@@ -29,11 +29,13 @@
 
     <header class="container-fluid" id="cabecera">
         <div class="row" >
-            <div class="col-xs-11">
+            <div class="col-xs-10">
                 <img src="http://localhost:8080/PracticaServJSPyJDBC/diseno/imagenes/l1.png"  id="logo">
             </div>
+            <div class=col-xs-2>
+        	<a style="color: white; font-size: 20px;" href="http://localhost:8080/PracticaServJSPyJDBC/ServletDestroy">Cerrar Sesion</a>
         </div>
-        <a style="color: white; font-size: 25px;" href="http://localhost:8080/PracticaServJSPyJDBC/ServletDestroy">Cerrar Sesion</a>
+        </div>
     </header>
     
 	<div class="container-fluid">
