@@ -27,7 +27,7 @@
     <header class="container-fluid" id="cabecera">
         <div class="row" >
             <div class="col-xs-11">
-                <img src=" http://localhost:8080/PracticaServJSPyJDBC/diseno/imagenes/logos2.png"  id="logo">
+                <img src=" http://localhost:8080/PracticaServJSPyJDBC/diseno/imagenes/l1.png"  id="logo">
             </div>
       
         </div>
