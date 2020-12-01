@@ -71,36 +71,38 @@
 				  </div>
 				</div>
 				-->
-			
-			<div class=col-xs-4>
+		</div>
+		<div class=col-xs-4>
+				<div>
+				</div>
+				<div><h2 style="color: white; font-size: 25px">Agregar Producto</h2></div>
+				<div style="height: 30px"></div>
 				<form method="post" action="/PracticaServJSPyJDBC/AnadirProductos">
 					  <div class="form-group">
-					    <label for="nombre">Nombre del Producto</label>
-					    <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp" placeholder="Ingrese el nombre">
+					    <label style="color: white; font-size: 22px" for="nombre">Nombre del Producto</label>
+					    <input style=" font-size: 18px" type="text" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp" placeholder="Ingrese el nombre">
 					  </div>
 					  <div class="form-group">
-					    <label for="descripcion">Descripcion</label>
-					    <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Ingrese la Descripcion">
+					    <label style="color: white; font-size: 22px" for="descripcion">Descripcion</label>
+					    <input style=" font-size: 18px" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Ingrese la Descripcion">
 					  </div>
 					  <div class="form-group">
-					    <label for="precio">Precio</label>
-					    <input type="text" class="form-control" id="precio" name="precio" placeholder="Ingrese la Descripcion">
+					    <label style="color: white; font-size: 22px" for="precio">Precio</label>
+					    <input style=" font-size: 18px" type="text" class="form-control" id="precio" name="precio" placeholder="Ingrese la Descripcion">
 					  </div>
 					  <div class="form-group">
-					    <label for="cate">Categoria</label>
-					    <input type="text" class="form-control" id="cate" name="cate" placeholder="Ingrese la Categoria">
+					    <label style="color: white; font-size: 22px" for="cate">Categoria</label>
+					    <input style=" font-size: 18px" type="text" class="form-control" id="cate" name="cate" placeholder="Ingrese la Categoria">
 					  </div>
 					  <div class="form-group">
-					    <label for="empresa">Empresa</label>
-					    <input type="text" class="form-control" id="empresa" name="empresa" placeholder="Ingrese la empresa">
+					    <label style="color: white; font-size: 22px" for="empresa">Empresa</label>
+					    <input style=" font-size: 18px" type="text" class="form-control" id="empresa" name="empresa" placeholder="Ingrese la empresa">
 					  </div>
 					 
-					  <button type="submit" class="btn btn-primary">Submit</button>
+					  <button style=" font-size: 18px" type="Agregar" class="btn btn-primary">Submit</button>
 				</form>
 			</div>
 			
-			
-		</div>
 	</div>
     
     
@@ -120,7 +122,9 @@
 </body>
 
 
-
+<div style="height: 180px">
+				<h2></h2>
+</div>
 
 
 

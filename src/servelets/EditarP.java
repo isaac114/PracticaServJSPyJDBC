@@ -37,11 +37,6 @@ public class EditarP extends HttpServlet {
 	
 
 
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doGet(req, resp);
-	}
 
 
 
@@ -59,6 +54,9 @@ public class EditarP extends HttpServlet {
 		ProductoDAO pdao = DAOFactory.getDAOFactory().getProductoDAO();
 		Producto p = pdao.findProducto(nombreP, Integer.parseInt(eid));
 		if(p != null) {
+			p.setNombre(nombreP);
+			p.setDescripcion(descripcion);
+			p.setPrecio(precio);
 			pdao.update(p);
 			System.out.println(p.getNombre()+"--"+p.getDescripcion()+"--"+p.getPrecio());
 			RequestDispatcher rd = request.getRequestDispatcher("/JPSs/VentanaAdmin.jsp?eid="+eid);

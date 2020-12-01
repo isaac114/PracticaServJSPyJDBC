@@ -47,7 +47,7 @@
 		</div>		
 	</div>   
     
-    <h2>ESTOY EN LA VENTANA DEL USUARIO NORMAL</h2>
+    
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -57,6 +57,10 @@
     <script type="text/javascript" src="diseno/js/ControladorAdmin.js"></script>
     
 </body>
+
+<div style="height: 590px">
+	<h2></h2>
+</div>
 
 <footer class="page-footer font-small  darken-3 s" style="background-color: #393939; padding-top: 1opx;">
 

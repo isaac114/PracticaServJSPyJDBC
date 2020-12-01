@@ -27,7 +27,7 @@
     <header class="container-fluid" id="cabecera">
         <div class="row" >
             <div class="col-xs-11">
-                <img src=" http://localhost:8080/PracticaServJSPyJDBC/diseno/imagenes/l1.png"  id="logo">
+                <img src=" http://localhost:8080/PracticaServJSPyJDBC/diseno/imagenes/logos2.png"  id="logo">
             </div>
       
         </div>
@@ -51,17 +51,7 @@
 				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/ListarProductos?eid=<%=request.getParameter("eid") %>">Listar Producto</a>
 				  </div>
 				  </div>
-				</div>
-				<div class="dropdown">
-				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    <small style = "font-size: 15px" >PRODUCTOS</small>
-				  </button>
-				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Action</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Another action</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Something else here</a>
-				  </div>
-				</div>
+				
 				<div class="dropdown">
 				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    <small style = "font-size: 15px" >Mi Empresa</small>
@@ -71,6 +61,7 @@
 				    <a style = "font-size: 15px" class="dropdown-item" href="#">Another action</a>
 				    <a style = "font-size: 15px" class="dropdown-item" href="#">Something else here</a>
 				  </div>
+				</div>
 				</div>
 				<!--
 				<div class="dropdown">
@@ -84,29 +75,30 @@
 				  </div>
 				</div>
 				-->
-				
+				<div class="col-xs-5" >
+				<h2 style="color: white; font-size: 30px">Productos de mi Empresa</h2>
+				<div style="height: 30px"></div>
+					<table class="table table-striped">
+						<tr>
+							<td style="color: white; font-size: 25px" scope="col"><strong>Id</strong></td>
+							<td style="color: white; font-size: 25px" scope="col"><strong>Nombre</strong></td>
+							<td style="color: white; font-size: 25px" scope="col"><strong>Precio</strong></td>
+							<td style="color: white; font-size: 25px" scope="col"><strong>Descripción</strong></td>
+						</tr>
+						<c:forEach var="p" items="${lista}">
+							<tr scope="row">
+								<td style="color: white; font-size: 20px">${p.id}</td>
+								<td style="color: white; font-size: 20px" >${p.nombre}</td>
+								<td style="color: white; font-size: 20px" >${p.precio}</td>
+								<td style="color: white; font-size: 20px">${p.descripcion}</td>
+							</tr>
+						</c:forEach>
+					</table>
+				</div>
 				
 			
 		</div>
 		
-		<div class="col-xs-5" >
-			<table class="table table-striped">
-			<tr>
-				<td scope="col"><strong>Id</strong></td>
-				<td scope="col"><strong>Nombre</strong></td>
-				<td scope="col"><strong>Precio</strong></td>
-				<td scope="col"><strong>Descripción</strong></td>
-			</tr>
-			<c:forEach var="p" items="${lista}">
-				<tr scope="row">
-					<td>${p.id}</td>
-					<td>${p.nombre}</td>
-					<td>${p.precio}</td>
-					<td>${p.descripcion}</td>
-				</tr>
-			</c:forEach>
-		</table>
-		</div>
 	</div>
     
     
@@ -126,7 +118,8 @@
 </body>
 
 
-
+<div style="height: 50px">
+</div>
 
 
 

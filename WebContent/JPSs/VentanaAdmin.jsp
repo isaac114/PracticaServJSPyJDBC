@@ -17,7 +17,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Ventana Administrador</title>
 
 </head>
 <body style="background-color: #575757;">
@@ -83,7 +83,7 @@
 	</div>
     
     
-    <h2>ESTOY EN LA VENTANA DEL ADMINISTRADOR</h2>
+   
     
 
 
@@ -103,7 +103,8 @@
 
 </body>
 
-
+<div style="height: 340px">
+</div>
 
 
 

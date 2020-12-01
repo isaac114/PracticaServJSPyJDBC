@@ -89,21 +89,23 @@
 		</div>
 		
 		<div class=col-xs-4>
+			<h2 style="color: white; font-size: 30px"></h2>
+			<div style="height: 30px"></div>
 				<form method="post" action="/PracticaServJSPyJDBC/EditarP?eid=<%=request.getParameter("eid")%>">
 					  <div class="form-group">
-					    <label for="nombre">Nombre del Producto</label>
-					    <input type="text" class="form-control" id="nombre" name="nombrep"  placeholder="${p.nombre}">
+					    <label style="color: white; font-size: 22px" for="nombre">Nombre del Producto</label>
+					    <input style=" font-size: 18px" type="text" class="form-control" id="nombre" name="nombrep"  placeholder="sss${p.nombre}">
 					  </div>
 					  <div class="form-group">
-					    <label for="descripcion">Descripcion</label>
-					    <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="${p.descripcion}">
+					    <label style="color: white; font-size: 22px" for="descripcion">Descripcion</label>
+					    <input style=" font-size: 18px" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="sss${p.descripcion}">
 					  </div>
 					  <div class="form-group">
-					    <label for="precio">Precio</label>
-					    <input type="text" class="form-control" id="precio" name="precio" placeholder="${p.precio}">
+					    <label style="color: white; font-size: 22px" for="precio">Precio</label>
+					    <input style=" font-size: 18px" type="text" class="form-control" id="precio" name="precio" placeholder="ssss${p.precio}">
 					  </div>
 			
-					  <button type="submit" class="btn btn-primary">Editar</button>
+					  <button style=" font-size: 18px" type="submit" class="btn btn-primary">Editar</button>
 				</form>
 			</div>
 	</div>

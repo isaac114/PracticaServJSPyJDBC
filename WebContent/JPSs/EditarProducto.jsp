@@ -74,13 +74,15 @@
 			</div>
 			
 			<div class=col-xs-4>
+				<h2 style="color: white; font-size: 30px">Editar Producto</h2>
+				<div style="height: 30px"></div>
 				<form method="post" >
 					  <div class="form-group">
-					    <label for="nombre">Nombre del Producto</label>
-					    <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp" placeholder="Ingrese el nombre">
+					    <label style="color: white; font-size: 22px" for="nombre">Nombre del Producto</label>
+					    <input style="font-size: 18px" type="text" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp" placeholder="Ingrese el nombre">
 					  </div>
 					  
-					  <button type="submit" class="btn btn-primary">Buscar</button>
+					  <button style="font-size: 18px" type="submit" class="btn btn-primary">Buscar</button>
 				</form>
 			</div>
 			
@@ -92,9 +94,10 @@
 		
 	</div>
     
-    
-    <h2>ESTOY EN LA VENTANA DEL ADMINISTRADOR</h2>
-    
+	<div style="height: 465px">
+					<h2></h2>
+	</div>
+
 
 
 

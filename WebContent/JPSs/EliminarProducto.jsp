@@ -74,13 +74,15 @@
 			</div>
 			
 			<div class=col-xs-4>
-				<form method="post" action="/PracticaServJSPyJDBC/EliminarProducto">
+			<div><h2 style="color: white; font-size: 25px">Buscar Producto</h2></div>
+			<div style="height: 30px"></div>
+				<form method="post" action="/PracticaServJSPyJDBC/BuscarProducto">
 					  <div class="form-group">
-					    <label for="nombre">Nombre del Producto</label>
-					    <input type="text" class="form-control" id="nombre" name="nombre"  placeholder="Ingrese el nombre">
+					    <label style="color: white; font-size: 23px" for="nombre">Nombre del Producto</label>
+					    <input style=" font-size: 18px" type="text" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp" placeholder="Ingrese el nombre">
 					  </div>
 					  
-					  <button type="submit" class="btn btn-primary">Eliminar</button>
+					  <button style=" font-size: 18px" type="submit" class="btn btn-primary">Buscar</button>
 				</form>
 			</div>
 			
@@ -95,7 +97,6 @@
 	</div>
     
     
-    <h2>ESTOY EN LA VENTANA DEL ADMINISTRADOR</h2>
     
 
 
@@ -115,6 +116,9 @@
 
 </body>
 
+<div style="height: 250px">
+				<h2></h2>
+</div>
 
 
 
