@@ -62,7 +62,7 @@ public class RealizarCompra extends HttpServlet {
 			//response.sendRedirect("http://localhost:8080/PracticaServJSPyJDBC/JPSs/CompraProductos.jsp");
 			
 		}catch(Exception e) {
-			//url = "http://localhost:8080/PracticaServJSPyJDBC/JPSs/VentanaUsuario.jsp";
+			url = "/JPSs/VentanaUsuario.jsp";
 			System.out.println("Error: " + e.getMessage());
 		}
 		getServletContext().getRequestDispatcher(url).forward(request, response);

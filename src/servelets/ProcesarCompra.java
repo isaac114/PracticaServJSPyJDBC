@@ -1,6 +1,7 @@
 package servelets;
 
-import java.io.IOException; 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -94,6 +95,12 @@ public class ProcesarCompra extends HttpServlet {
 				}
 				
 			}
+			
+			response.setContentType("text/html");
+			PrintWriter out = response.getWriter();
+			out.println("<html><head><title>Confirmacion de Compra</title></head><body>"
+					  + "<h2>Gracias, su solicitud de compra se a procesado con exito</h2>"
+					  + "</body></html>");
 			
 		}catch(Exception e) {
 			
