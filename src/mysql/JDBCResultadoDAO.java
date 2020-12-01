@@ -68,4 +68,10 @@ public class JDBCResultadoDAO extends JDBCGenericDAO<Resultado, Integer> impleme
 		return resulist;
 	}
 
+	@Override
+	public Resultado busquedaU(String correo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
