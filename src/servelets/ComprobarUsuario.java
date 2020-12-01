@@ -40,12 +40,15 @@ public class ComprobarUsuario extends HttpServlet {
 			//request.getSession().setAttribute("Sesion", "Logeado");
 						
 			String tipo_user = user.getTipo_usuario();
+			String nombre_Usuario = user.getNombres();
+			String apellido_Usuario = user.getApellidos();
+			String cedula_Usuario = user.getCedula();
 			
 			if(tipo_user.equals("U")) {
 				
 				request.getSession().setAttribute("Sesion", "Logeado");
 				System.out.println("El usuario " + user.getNombres() + " " + user.getApellidos() + ", es un usuario normal !!");
-				response.sendRedirect("http://localhost:8080/PracticaServJSPyJDBC/JPSs/VentanaUsuario.jsp?correo="+email+"&contra="+contrasena);
+				response.sendRedirect("http://localhost:8080/PracticaServJSPyJDBC/JPSs/VentanaUsuario.jsp?correo="+email+"&contra="+contrasena+"&nombre="+nombre_Usuario+"&apellido="+apellido_Usuario+"&cedula="+cedula_Usuario);
 				
 			} else if(tipo_user.equals("A")) {
 				

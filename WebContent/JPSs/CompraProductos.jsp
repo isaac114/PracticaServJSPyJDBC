@@ -31,10 +31,6 @@
             </div>
         </div>
     </header>
-	<h1 style="font-size: 25px; color: white;">Comprar Productos</h1>
-	
-	<c:set var="correo" scope="request" value="${param.correo}" />
-	<c:set var="contra" scope="request" value="${param.contra}" />
 	
 	<div class="row" style="color: white;">
 		<div class="col align-self-start"></div>
@@ -44,7 +40,7 @@
 					<td scope="col" style="font-size: 25px"><strong>Id</strong></td>
 					<td scope="col" style="font-size: 25px"><strong>Nombre</strong></td>
 					<td scope="col" style="font-size: 25px"><strong>Precio</strong></td>
-					<td scope="col" style="font-size: 25px"><strong>Descripción</strong></td>
+					<td scope="col" style="font-size: 25px"><strong>Descripciï¿½n</strong></td>
 				</tr>
 				<c:forEach var="p" items="${lista}">
 					<tr scope="row">
@@ -171,7 +167,7 @@
     <!-- Footer Elements -->
   
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3" style="background-color: #1E1E1E;">© 2020 Copyright:
+    <div class="footer-copyright text-center py-3" style="background-color: #1E1E1E;">ï¿½ 2020 Copyright:
       <a href="https://www.ups.edu.ec/"> ups.edu.ec</a>
     </div>
     <!-- Copyright -->

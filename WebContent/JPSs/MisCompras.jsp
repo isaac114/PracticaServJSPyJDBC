@@ -127,7 +127,7 @@
     <!-- Footer Elements -->
   
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3" style="background-color: #1E1E1E;">© 2020 Copyright:
+    <div class="footer-copyright text-center py-3" style="background-color: #1E1E1E;">ï¿½ 2020 Copyright:
       <a href="https://www.ups.edu.ec/"> ups.edu.ec</a>
     </div>
     <!-- Copyright -->
