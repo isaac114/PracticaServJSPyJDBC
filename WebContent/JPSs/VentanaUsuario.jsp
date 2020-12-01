@@ -18,6 +18,10 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
     <title>Usuario Normal</title>
+    <STYLE type="text/css">
+  		H2 { text-align: center}
+  		P { text-align: center}
+ 	</STYLE>
 
 </head>
 <body style="background-color: #575757;">
@@ -47,7 +51,24 @@
 		</div>		
 	</div>   
     
-    <h2>ESTOY EN LA VENTANA DEL USUARIO NORMAL</h2>
+    <c:set var="correo" scope="request" value="${param.correo}" />
+	<c:set var="contra" scope="request" value="${param.contra}" />
+    <c:set var="nombre" scope="request" value="${param.nombre}"/>
+    <c:set var="apellido" scope="request" value="${param.apellido}"/>
+    <c:set var="cedula" scope="request" value="${param.cedula}"/>
+    
+    <br>
+    <br>
+    <br>
+    <h2 style="color: white; font-size: 45px;">Hola ${nombre}, bienvenid@ a nuestro sitio web</h2>
+
+	<!-- AQUI VA LA IMAGEN -->
+	<br>
+	<br>
+	<p style="color: white; font-size: 25px;" id="label"><strong style="color: rgb(236,72,113);">Nombre:</strong> ${nombre}</p>
+	<p style="color: white; font-size: 25px;" id="label"><strong style="color: rgb(236,72,113);">Apellido:</strong> ${apellido}</p>
+	<p style="color: white; font-size: 25px;" id="label"><strong style="color: rgb(236,72,113);">Cedula:</strong> ${cedula}</p>
+	<p style="color: white; font-size: 25px;" id="label"><strong style="color: rgb(236,72,113);">Correo Electronico:</strong> ${correo}</p>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

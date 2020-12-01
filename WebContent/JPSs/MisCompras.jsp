@@ -33,7 +33,7 @@
     </header>
     
 	<c:set var="lista" scope="request" value="${compras}" />
-	<h1>Lista de Compras</h1>
+	<h1 style="color: white; font-size: 25px;">Lista de Compras</h1>
 	
 	<table class="table" style="color: white;">
 		<tr>

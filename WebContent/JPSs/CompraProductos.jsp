@@ -31,7 +31,7 @@
             </div>
         </div>
     </header>
-	<h1>Lista de Productos</h1>
+	<h1 style="color: white; font-size: 25px;">Lista de Productos</h1>
 	
 	<c:set var="correo" scope="request" value="${param.correo}" />
 	<c:set var="contra" scope="request" value="${param.contra}" />
