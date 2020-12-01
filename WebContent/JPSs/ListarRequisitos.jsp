@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -7,7 +8,7 @@
 	<meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" >    
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://localhost:8080/PracticaServJSPyJDBC/diseno/css/diseno.css">
+    <link rel="stylesheet" href=" http://localhost:8080/PracticaServJSPyJDBC/diseno/css/diseno.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -17,15 +18,16 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Buscar Productos</title>
 
 </head>
 <body style="background-color: #575757;">
+<c:set var="p" scope="request" value="${requisitos}"/>
 
     <header class="container-fluid" id="cabecera">
         <div class="row" >
             <div class="col-xs-11">
-                <img src="http://localhost:8080/PracticaServJSPyJDBC/diseno/imagenes/logos2.png"  id="logo">
+                <img src=" http://localhost:8080/PracticaServJSPyJDBC/diseno/imagenes/logos2.png"  id="logo">
             </div>
       
         </div>
@@ -36,12 +38,12 @@
 	<div class="container-fluid">
 		<div class="row">
 			<!-- SECCION DE LOS BOTONES DE NAVEGACION -->
-			<div class=col-xs-4>
+			<div class=col-xs-3>
 				<div class="dropdown">
 				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    <small style = "font-size: 15px" >PRODUCTOS</small>
 				  </button>
-				  <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+				    <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
 				    <a  style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/AnadirProductos?eid=<%=request.getParameter("eid") %>">Agregar Productos</a>
 				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/EliminarProducto?eid=<%=request.getParameter("eid") %>">Eliminar Producto</a>
 				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/EditarProducto?eid=<%=request.getParameter("eid") %>">Editar Producto</a>
@@ -54,8 +56,9 @@
 				    <small style = "font-size: 15px" >Mi Empresa</small>
 				  </button>
 				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/ListarReq?eid=<%=request.getParameter("eid") %>">Listar Ordenes</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Atender Ordenes</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="#">Action</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="#">Another action</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="#">Something else here</a>
 				  </div>
 				</div>
 				<!--
@@ -70,24 +73,32 @@
 				  </div>
 				</div>
 				-->
-			</div>
-			
-			
+				
+				
 			
 		</div>
-		
-		
-		
-		
+			<div class="col-xs-4" >
+				<table class="table table-striped">
+				<tr>
+					<td scope="col"><strong>PedidoID</strong></td>
+					<td scope="col"><strong>Fecha de Pedido</strong></td>
+					<td scope="col"><strong>Estado</strong></td>
+					<td scope="col"><strong>Nombre Producto</strong></td>
+				</tr>
+				<c:forEach var="p" items="${requisitos}">
+					<tr scope="row">
+						<td>${p.cabeceraID}</td>
+						<td>${p.fecha}</td>
+						<td>${p.estado}</td>
+						<td>${p.producto}</td>
+					</tr>
+				</c:forEach>
+			</table>
+			</div>
 		
 	</div>
     
     
-    <h2>ESTOY EN LA VENTANA DEL ADMINISTRADOR</h2>
-    
-
-
-
     
    
 

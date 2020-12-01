@@ -1,7 +1,7 @@
 
 package dao;
 
-import modelo.Empresa;
+
 
 public abstract class DAOFactory {
 	
@@ -26,5 +26,7 @@ public abstract class DAOFactory {
     public abstract ProductoDAO getProductoDAO();
     
     public abstract EmpresaDAO getEmpresaDAO();
+    
+    public abstract ResultadoDAO getResultadoDAO();
     
 }

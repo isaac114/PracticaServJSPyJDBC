@@ -4,6 +4,7 @@ import modelo.Empresa;
 import mysql.JDBCAdministradorDAO;
 import mysql.JDBCEmpresaDAO;
 import mysql.JDBCProductoDAO;
+import mysql.JDBCResultadoDAO;
 import mysql.JDBCUsuarioDAO;
 import mysql.JDBCCompraDAO;
 
@@ -52,5 +53,15 @@ public  class JDBCDAOFactory extends DAOFactory {
 		// TODO Auto-generated method stub
 		return new JDBCCompraDAO();
 	}
+
+	@Override
+	public ResultadoDAO getResultadoDAO() {
+		// TODO Auto-generated method stub
+		return new JDBCResultadoDAO();
+	}
+
+
+
+	
 	
 }
