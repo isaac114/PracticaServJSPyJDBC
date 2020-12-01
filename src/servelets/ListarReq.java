@@ -38,11 +38,9 @@ public class ListarReq extends HttpServlet {
 		System.out.println("ListarReqsGET--->"+eid);
 		List<Resultado> list = new ArrayList<Resultado>();
 		ResultadoDAO rdao = DAOFactory.getDAOFactory().getResultadoDAO();
-		list =rdao.listarRequisitos(eid);
-		if(list != null) {
-			request.setAttribute("requisitos", list);
-			getServletContext().getRequestDispatcher("/JPSs/ListarRequisitos.jsp?eid="+eid).forward(request, response);
-		}
+		list =(ArrayList<Resultado>)rdao.listarRequisitos(eid);
+		request.setAttribute("requisitos", list);
+		getServletContext().getRequestDispatcher("/JPSs/ListarRequisitos.jsp?eid="+eid).forward(request, response);
  	}
 
 	/**
