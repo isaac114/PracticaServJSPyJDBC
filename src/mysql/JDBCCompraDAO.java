@@ -38,8 +38,9 @@ public class JDBCCompraDAO extends JDBCGenericDAO<Compra, Integer> implements Co
 				String estado = rs.getString("cc_estado");
 				int id_empresa_N = rs.getInt("Empresa_em_id");
 				int id_producto = rs.getInt("Producto_pro_id");
+				int id_usuario = rs.getInt("Usuario_us_id");
 				
-				cbr = new Compra(id,fecha,estado,id_empresa_N,id_producto);
+				cbr = new Compra(id,fecha,estado,id_empresa_N,id_producto,id_usuario);
 			}
 		} catch(SQLException e) {
 			System.out.println(">>>WARNING (JDBCCabeceraDAO-->): " + e.getMessage());
@@ -65,10 +66,11 @@ public class JDBCCompraDAO extends JDBCGenericDAO<Compra, Integer> implements Co
 		try {
 			System.out.println("Ha ingresado a JDBCUsuarioDAO");
 			conexionUno.update("INSERT Compra VALUES (" + compra.getId() + ", '" 
-					 									  		 + compra.getFecha() + "', '"
-					 									  		 + compra.getEstado() + "', "
-					 									  		 + compra.getEmpresa_id() + ", "
-					 									  		 + compra.getProducto_id() + ")");
+					 									+ compra.getFecha() + "', '"
+					 									+ compra.getEstado() + "', "
+					 									+ compra.getEmpresa_id() + ", "
+					 									+ compra.getProducto_id() + ", "
+					 									+ compra.getUsuario_id() + ")");
 		} catch(Exception e) {
 			System.out.println("Error: " + e.getMessage());
 		}

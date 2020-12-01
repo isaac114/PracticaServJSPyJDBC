@@ -25,6 +25,8 @@ public class ProcesarCompra extends HttpServlet {
 	private List<Producto> listaProducto;
 	private Compra compra;
 	private CompraDAO compraDao;
+	private Usuario user;
+	private UsuarioDAO userDao;
        
     public ProcesarCompra() {
         
@@ -33,6 +35,8 @@ public class ProcesarCompra extends HttpServlet {
     	producto = new Producto();
     	compraDao = DAOFactory.getDAOFactory().getCompraDAO();
     	compra = new Compra();
+    	userDao = DAOFactory.getDAOFactory().getUsuarioDAO();
+    	user = new Usuario();
     	
     }
 
@@ -46,13 +50,21 @@ public class ProcesarCompra extends HttpServlet {
 		String stringNew = carrito;
 		String[] parts = stringNew.split(",");
 		
+		String correo = null;
+		correo = request.getParameter("correo");
+		
 		try {
+			
+			user = userDao.busquedaU(correo);
+			System.out.println("Usuario recuperado: " + user.getNombres() + " " + user.getApellidos());
+			
 			
 			for(int i=1;i<=parts.length-1;i++) {
 				
 				//BUSCAR ID PRODUCTO. 
 				int codigo_producto_recuperado=0;
 				int codigo_empresa_producto=0;
+				int codigo_usuario_recuperado=0;
 				
 				producto = productoDao.buscarPorDescripcion(parts[i]);
 				
@@ -60,6 +72,7 @@ public class ProcesarCompra extends HttpServlet {
 					
 					codigo_producto_recuperado = producto.getId();
 					codigo_empresa_producto = producto.getEmpresa().getId();
+					codigo_usuario_recuperado = user.getId();
 					
 					String MiFecha = new SimpleDateFormat("yyyy-MM-dd").format(fecha);
 														
@@ -69,6 +82,7 @@ public class ProcesarCompra extends HttpServlet {
 					compra.setEstado("E");
 					compra.setEmpresa_id(codigo_empresa_producto);
 					compra.setProducto_id(codigo_producto_recuperado);
+					compra.setUsuario_id(codigo_usuario_recuperado);
 					compraDao.create(compra);
 					
 					System.out.println("Compra registrada con existo, Servlet : ProcesarCompra.java");

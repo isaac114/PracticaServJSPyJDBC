@@ -11,18 +11,20 @@ public class Compra implements Serializable{
 	private String estado;
 	private int empresa_id;
 	private int producto_id;
+	private int usuario_id;
 	
 	public Compra() {
 		//CONSTRUCTOR OBLIGATORIO. 
 	}
 	
-	public Compra(int id, String fecha, String estado, int empresa_id, int producto_id) {
+	public Compra(int id, String fecha, String estado, int empresa_id, int producto_id, int usuario_id) {
 		super();
 		this.id = id;
 		this.fecha = fecha;
 		this.estado = estado;
 		this.empresa_id = empresa_id;
 		this.producto_id = producto_id;
+		this.usuario_id = usuario_id;
 	}
 
 	public int getId() {
@@ -65,10 +67,18 @@ public class Compra implements Serializable{
 		this.producto_id = producto_id;
 	}
 
+	public int getUsuario_id() {
+		return usuario_id;
+	}
+
+	public void setUsuario_id(int usuario_id) {
+		this.usuario_id = usuario_id;
+	}
+
 	@Override
 	public String toString() {
 		return "Compra [id=" + id + ", fecha=" + fecha + ", estado=" + estado + ", empresa_id=" + empresa_id
-				+ ", producto_id=" + producto_id + "]";
+				+ ", producto_id=" + producto_id + ", usuario_id=" + usuario_id + "]";
 	}
 	
 }
