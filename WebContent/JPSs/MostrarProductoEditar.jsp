@@ -43,7 +43,7 @@
 				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    <small style = "font-size: 15px" >PRODUCTOS</small>
 				  </button>
-				  <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				  <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
 				    <a  style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/AnadirProductos?eid=<%=request.getParameter("eid") %>">Agregar Productos</a>
 				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/EliminarProducto?eid=<%=request.getParameter("eid") %>">Eliminar Producto</a>
 				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/EditarProducto?eid=<%=request.getParameter("eid") %>">Editar Producto</a>
@@ -53,22 +53,11 @@
 				</div>
 				<div class="dropdown">
 				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    <small style = "font-size: 15px" >PRODUCTOS</small>
-				  </button>
-				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Action</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Another action</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Something else here</a>
-				  </div>
-				</div>
-				<div class="dropdown">
-				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    <small style = "font-size: 15px" >Mi Empresa</small>
 				  </button>
 				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Action</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Another action</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Something else here</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/ListarReq?eid=<%=request.getParameter("eid") %>">Listar Ordenes</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/Despachar?eid=<%=request.getParameter("eid") %>&cabecera=n&bandera=0">Atender Ordenes</a>
 				  </div>
 				</div>
 				<!--
@@ -94,18 +83,17 @@
 				<form method="post" action="/PracticaServJSPyJDBC/EditarP?eid=<%=request.getParameter("eid")%>">
 					  <div class="form-group">
 					    <label style="color: white; font-size: 22px" for="nombre">Nombre del Producto</label>
-					    <input style=" font-size: 18px" type="text" class="form-control" id="nombre" name="nombrep"  placeholder="sss${p.nombre}">
+					    <input style=" font-size: 18px" type="text" class="form-control" id="nombre" name="nombrep"  placeholder="${p.nombre}">
 					  </div>
 					  <div class="form-group">
 					    <label style="color: white; font-size: 22px" for="descripcion">Descripcion</label>
-					    <input style=" font-size: 18px" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="sss${p.descripcion}">
+					    <input style=" font-size: 18px" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="${p.descripcion}">
 					  </div>
 					  <div class="form-group">
 					    <label style="color: white; font-size: 22px" for="precio">Precio</label>
-					    <input style=" font-size: 18px" type="text" class="form-control" id="precio" name="precio" placeholder="ssss${p.precio}">
+					    <input style=" font-size: 18px" type="text" class="form-control" id="precio" name="precio" placeholder="${p.precio}">
 					  </div>
-			
-					  <button style=" font-size: 18px" type="submit" class="btn btn-primary">Editar</button>
+					  <button style=" font-size: 20px" type="submit" class="btn btn-primary">Editar</button>
 				</form>
 			</div>
 	</div>

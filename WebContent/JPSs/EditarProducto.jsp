@@ -42,7 +42,7 @@
 				    <small style = "font-size: 15px" >PRODUCTOS</small>
 				  </button>
 				  <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-				   <a  style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/AnadirProductos?eid=<%=request.getParameter("eid") %>">Agregar Productos</a>
+				    <a  style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/AnadirProductos?eid=<%=request.getParameter("eid") %>">Agregar Productos</a>
 				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/EliminarProducto?eid=<%=request.getParameter("eid") %>">Eliminar Producto</a>
 				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/EditarProducto?eid=<%=request.getParameter("eid") %>">Editar Producto</a>
 				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/BuscarProducto?eid=<%=request.getParameter("eid") %>">Buscar Productos</a>
@@ -54,9 +54,8 @@
 				    <small style = "font-size: 15px" >Mi Empresa</small>
 				  </button>
 				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Action</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Another action</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Something else here</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/ListarReq?eid=<%=request.getParameter("eid") %>">Listar Ordenes</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/Despachar?eid=<%=request.getParameter("eid") %>&cabecera=n&bandera=0">Atender Ordenes</a>
 				  </div>
 				</div>
 				<!--

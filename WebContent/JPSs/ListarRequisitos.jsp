@@ -43,7 +43,7 @@
 				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    <small style = "font-size: 15px" >PRODUCTOS</small>
 				  </button>
-				    <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+				  <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
 				    <a  style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/AnadirProductos?eid=<%=request.getParameter("eid") %>">Agregar Productos</a>
 				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/EliminarProducto?eid=<%=request.getParameter("eid") %>">Eliminar Producto</a>
 				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/EditarProducto?eid=<%=request.getParameter("eid") %>">Editar Producto</a>
@@ -56,9 +56,8 @@
 				    <small style = "font-size: 15px" >Mi Empresa</small>
 				  </button>
 				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Action</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Another action</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Something else here</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/ListarReq?eid=<%=request.getParameter("eid") %>">Listar Ordenes</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/Despachar?eid=<%=request.getParameter("eid") %>&cabecera=n&bandera=0">Atender Ordenes</a>
 				  </div>
 				</div>
 				<!--
@@ -77,20 +76,26 @@
 				
 			
 		</div>
+			
+			
 			<div class="col-xs-4" >
+			<h2 style="color: white; font-size: 30px">Lista de Pedidos</h2>
+			<div style="width: 30px">
+				<h2></h2>
+			</div>
 				<table class="table table-striped">
 				<tr>
-					<td scope="col"><strong>PedidoID</strong></td>
-					<td scope="col"><strong>Fecha de Pedido</strong></td>
-					<td scope="col"><strong>Estado</strong></td>
-					<td scope="col"><strong>Nombre Producto</strong></td>
+					<td style="color: white; font-size: 25px" scope="col"><strong>ID</strong></td>
+					<td style="color: white; font-size: 25px" scope="col"><strong>Fecha</strong></td>
+					<td style="color: white; font-size: 25px" scope="col"><strong>Estado</strong></td>
+					<td style="color: white; font-size: 25px" scope="col"><strong>Producto</strong></td>
 				</tr>
 				<c:forEach var="p" items="${requisitos}">
 					<tr scope="row">
-						<td>${p.cabeceraID}</td>
-						<td>${p.fecha}</td>
-						<td>${p.estado}</td>
-						<td>${p.producto}</td>
+						<td style="color: white; font-size: 18px">${p.cabeceraID}</td>
+						<td style="color: white; font-size: 18px">${p.fecha}</td>
+						<td style="color: white; font-size: 18px">${p.estado}</td>
+						<td style="color: white; font-size: 18px">${p.producto}</td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -115,7 +120,7 @@
 </body>
 
 
-
+<div style="height: 200px"></div>
 
 
 

@@ -50,18 +50,15 @@
 				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/BuscarProducto?eid=<%=request.getParameter("eid") %>">Buscar Productos</a>
 				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/ListarProductos?eid=<%=request.getParameter("eid") %>">Listar Producto</a>
 				  </div>
-				  </div>
-				
+				</div>
 				<div class="dropdown">
 				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    <small style = "font-size: 15px" >Mi Empresa</small>
 				  </button>
 				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Action</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Another action</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Something else here</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/ListarReq?eid=<%=request.getParameter("eid") %>">Listar Ordenes</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/Despachar?eid=<%=request.getParameter("eid") %>&cabecera=n&bandera=0">Atender Ordenes</a>
 				  </div>
-				</div>
 				</div>
 				<!--
 				<div class="dropdown">
@@ -75,7 +72,10 @@
 				  </div>
 				</div>
 				-->
-				<div class="col-xs-5" >
+				
+			
+		</div>
+		<div class="col-xs-5" >
 				<h2 style="color: white; font-size: 30px">Productos de mi Empresa</h2>
 				<div style="height: 30px"></div>
 					<table class="table table-striped">
@@ -95,10 +95,6 @@
 						</c:forEach>
 					</table>
 				</div>
-				
-			
-		</div>
-		
 	</div>
     
     

@@ -46,13 +46,23 @@ public class AnadirProductos extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		eid = request.getParameter("eid");
 		String nombre = request.getParameter("nombre");
 		String precio  = request.getParameter("precio");
 		String descripcion = request.getParameter("descripcion");
-		String categoria = request.getParameter("cate");
-		String empresa = request.getParameter("empresa");
-		System.out.println("Datos dEL producto = "+nombre+"-"+precio+"-"+descripcion+"-"+categoria+"-"+empresa);
-		Categoria cat = new Categoria(1,"");
+		String cate = request.getParameter("cate");
+		int codigo_cate;
+    	if(cate.equals("Oficina")) {
+    		codigo_cate = 1;
+    	} else if(cate.equals("Papeleria")) {
+    		codigo_cate = 2;
+    	} else if(cate.equals("Tecnologia")) {
+    		codigo_cate = 3;
+    	} else {
+    		codigo_cate = 0;
+    	}
+		System.out.println("Datos dEL producto = "+nombre+"-"+precio+"-"+descripcion+"-"+cate+"-"+eid);
+		Categoria cat = new Categoria(codigo_cate,"");
 		Empresa em = new Empresa(Integer.parseInt(eid), "", "", "");
 		Producto pro = new Producto(0, nombre, precio, descripcion, cat, em);
 		ProductoDAO productoDao = DAOFactory.getDAOFactory().getProductoDAO();

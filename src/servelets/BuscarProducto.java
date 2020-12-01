@@ -44,7 +44,6 @@ public class BuscarProducto extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		eid = request.getParameter("eid");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/JPSs/BuscarProductoForm.jsp?eid="+eid);
 		dispatcher.forward(request, response);
 	}
@@ -56,6 +55,7 @@ public class BuscarProducto extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		String nombre = request.getParameter("nombre");
+		eid = request.getParameter("eid");
 		System.out.println("Si pasa el parameter"+nombre+"--"+eid);
 		ProductoDAO pdao = DAOFactory.getDAOFactory().getProductoDAO();
 		Producto p = pdao.findProducto(nombre, Integer.parseInt(eid));

@@ -51,7 +51,7 @@
 				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    <small style = "font-size: 15px" >PRODUCTOS</small>
 				  </button>
-				    <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+				  <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
 				    <a  style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/AnadirProductos?eid=<%=request.getParameter("eid") %>">Agregar Productos</a>
 				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/EliminarProducto?eid=<%=request.getParameter("eid") %>">Eliminar Producto</a>
 				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/EditarProducto?eid=<%=request.getParameter("eid") %>">Editar Producto</a>
@@ -64,9 +64,8 @@
 				    <small style = "font-size: 15px" >Mi Empresa</small>
 				  </button>
 				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Action</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Another action</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Something else here</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/ListarReq?eid=<%=request.getParameter("eid") %>">Listar Ordenes</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/Despachar?eid=<%=request.getParameter("eid") %>&cabecera=n&bandera=0">Atender Ordenes</a>
 				  </div>
 				</div>
 				<!--
@@ -86,23 +85,27 @@
 			
 		</div>
 			<div class="col-xs-4" >
-				<table class="table table-striped">
+			
+			<h2 style="color: white; font-size: 30px"> Despachar Pedidos</h2>
+			<div style="height: 30px"></div>
+			
+				<table class="table table-striped" style="color: white;">
 				<tr>
-					<td scope="col"><strong>PedidoID</strong></td>
-					<td scope="col"><strong>Fecha de Pedido</strong></td>
-					<td scope="col"><strong>Estado</strong></td>
-					<td scope="col"><strong>Nombre Producto</strong></td>
-					<td scope="col"><strong>Aceptar</strong></td>
-					<td scope="col"><strong>Rechazar</strong></td>
+					<td style="font-size: 25px" scope="col"><strong>PedidoID</strong></td>
+					<td style="font-size: 25px" scope="col"><strong>Fecha de Pedido</strong></td>
+					<td style="font-size: 25px" scope="col"><strong>Estado</strong></td>
+					<td style="font-size: 25px"  scope="col"><strong>Nombre Producto</strong></td>
+					<td style="font-size: 25px" scope="col"><strong>Aceptar</strong></td>
+					<td style="font-size: 25px"  scope="col"><strong>Rechazar</strong></td>
 				</tr>
 				<c:forEach var="p" items="${requisitos}">
 					<tr scope="row">
-						<td>${p.cabeceraID}</td>
-						<td>${p.fecha}</td>
-						<td>${p.estado}</td>
-						<td>${p.producto}</td>
-						<td><a onclick="location.reload()" href="http://localhost:8080/PracticaServJSPyJDBC/Despachar?eid=<%=request.getParameter("eid")%>&cabecera=${p.cabeceraID}&bandera=2">Aceptar</a></td>
-						<td><a onclick="location.reload()" href="http://localhost:8080/PracticaServJSPyJDBC/Despachar?eid=<%=request.getParameter("eid")%>&cabecera=${p.cabeceraID}&bandera=1">Rechazar</a></td>
+						<td style="font-size: 18px">${p.cabeceraID}</td>
+						<td style="font-size: 18px">${p.fecha}</td>
+						<td style="font-size: 18px">${p.estado}</td>
+						<td style="font-size: 18px">${p.producto}</td>
+						<td style="font-size: 18px; color: blue;"><a onclick="location.reload()" href="http://localhost:8080/PracticaServJSPyJDBC/Despachar?eid=<%=request.getParameter("eid")%>&cabecera=${p.cabeceraID}&bandera=2">Aceptar</a></td>
+						<td style="font-size: 18px; color: blue;"><a onclick="location.reload()" href="http://localhost:8080/PracticaServJSPyJDBC/Despachar?eid=<%=request.getParameter("eid")%>&cabecera=${p.cabeceraID}&bandera=1">Rechazar</a></td>
 					</tr>
 				</c:forEach>
 			</table>

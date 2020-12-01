@@ -44,6 +44,7 @@ public class EliminarProducto extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		eid = request.getParameter("eid");
 		String nombre = request.getParameter("nombre");
 		ProductoDAO pdao = DAOFactory.getDAOFactory().getProductoDAO();
 		Producto p = new Producto(0,nombre,"","",null,null);

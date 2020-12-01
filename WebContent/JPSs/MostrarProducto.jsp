@@ -25,9 +25,6 @@
 <c:set var="p" scope="request" value="${producto}"/>
 <c:set var="e" scope="request" value="${empresa}"/>
 
-<p>ID: ${e.id}</p> 
-<p>Nombre: ${e.nombre}</p> 
-
     <header class="container-fluid" id="cabecera">
         <div class="row" >
             <div class="col-xs-11">
@@ -47,7 +44,7 @@
 				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    <small style = "font-size: 15px" >PRODUCTOS</small>
 				  </button>
-				  <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				  <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
 				    <a  style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/AnadirProductos?eid=<%=request.getParameter("eid") %>">Agregar Productos</a>
 				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/EliminarProducto?eid=<%=request.getParameter("eid") %>">Eliminar Producto</a>
 				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/EditarProducto?eid=<%=request.getParameter("eid") %>">Editar Producto</a>
@@ -57,22 +54,11 @@
 				</div>
 				<div class="dropdown">
 				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    <small style = "font-size: 15px" >PRODUCTOS</small>
-				  </button>
-				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Action</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Another action</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Something else here</a>
-				  </div>
-				</div>
-				<div class="dropdown">
-				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    <small style = "font-size: 15px" >Mi Empresa</small>
 				  </button>
 				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Action</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Another action</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Something else here</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/ListarReq?eid=<%=request.getParameter("eid") %>">Listar Ordenes</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/Despachar?eid=<%=request.getParameter("eid") %>&cabecera=n&bandera=0">Atender Ordenes</a>
 				  </div>
 				</div>
 				<!--
@@ -93,29 +79,21 @@
 		</div>
 		
 		<div class=col-xs-4>
+		<h2 style="color: white; font-size: 30px">Datos del Producto</h2>
+		<div style="height: 30px"></div>
 				<form >
 					  <div class="form-group">
-					    <label for="nombre">Nombre del Producto</label>
-					    <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp" placeholder="Nombre: ${p.nombre}">
+					    <label style="color: white; font-size: 22px" for="nombre">Nombre del Producto</label>
+					    <input style="font-size: 18px" type="text" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp" placeholder="Nombre: ${p.nombre}">
 					  </div>
 					  <div class="form-group">
-					    <label for="descripcion">Descripcion</label>
-					    <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="${p.descripcion}">
+					    <label style="color: white; font-size: 22px"  for="descripcion">Descripcion</label>
+					    <input style="font-size: 18px" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="${p.descripcion}">
 					  </div>
 					  <div class="form-group">
-					    <label for="precio">Precio</label>
-					    <input type="text" class="form-control" id="precio" name="precio" placeholder="${p.precio}">
+					    <label style="color: white; font-size: 22px"  for="precio">Precio</label>
+					    <input style="font-size: 18px" type="text" class="form-control" id="precio" name="precio" placeholder="${p.precio}">
 					  </div>
-					  <div class="form-group">
-					    <label for="cate">Categoria</label>
-					    <input type="text" class="form-control" id="cate" name="cate" placeholder=" ${p.categoria.nombre}">
-					  </div>
-					  <div class="form-group">
-					    <label for="empresa">Empresa</label>
-					    <input type="text" class="form-control" id="empresa" name="empresa" placeholder=" ${e.nombre}">
-					  </div>
-					 
-					  <button type="submit" class="btn btn-primary">Submit</button>
 				</form>
 			</div>
 	</div>
@@ -136,7 +114,7 @@
 
 </body>
 
-
+<div style="height: 50px;"></div>
 
 
 
