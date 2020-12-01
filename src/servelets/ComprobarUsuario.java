@@ -36,6 +36,8 @@ public class ComprobarUsuario extends HttpServlet {
 		
 		if(user != null) {
 			System.out.println("Inicio secion Usuario:"+user.getNombres());
+			
+			request.getSession().setAttribute("Sesion", "Logeado");
 						
 			String tipo_user = user.getTipo_usuario();
 			
