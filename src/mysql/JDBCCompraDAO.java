@@ -79,7 +79,6 @@ public class JDBCCompraDAO extends JDBCGenericDAO<Compra, Integer> implements Co
 
 	@Override
 	public Compra read(Integer id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -93,6 +92,29 @@ public class JDBCCompraDAO extends JDBCGenericDAO<Compra, Integer> implements Co
 	public Compra busquedaU(String correo) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<Compra> read(int id) {
+		List<Compra> lista = new ArrayList<Compra>();
+		ResultSet rs = conexionUno.query("SELECT * FROM Compra WHERE Usuario_us_id LIKE "+"'"+id+"'");
+		try {
+			while(rs.next()) {
+				int idN = rs.getInt("cc_id");
+				String fecha = rs.getString("cc_fecha");
+				String estado = rs.getString("cc_estado");
+				int id_empresa_N = rs.getInt("Empresa_em_id");
+				int id_producto = rs.getInt("Producto_pro_id");
+				int id_usuario = rs.getInt("Usuario_us_id");
+				Compra miCompra = new Compra(idN,fecha,estado,id_empresa_N,id_producto,id_usuario);
+				if(miCompra != null) {
+					lista.add(miCompra);
+				}
+			}
+		} catch(SQLException e) {
+			System.out.println(">>>WARNING (JDBCCabeceraDAO-->): " + e.getMessage());
+		}
+		return lista;
 	}
 
 }

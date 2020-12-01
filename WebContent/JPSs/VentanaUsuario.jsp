@@ -39,7 +39,7 @@
 				  	</button>
 				  	<div  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 				    	<a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/RealizarCompra?correo=<%=request.getParameter("correo") %>&contra=<%=request.getParameter("contra")%>">Realizar Pedido</a>
-				    	<a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/CerrarSesion">Visualizar Compras</a>
+				    	<a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/ComprasUsuario?correo=<%=request.getParameter("correo") %>&contra=<%=request.getParameter("contra")%>">Visualizar Compras</a>
 				    	<a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/CerrarSesion">Cerrar Sesion</a>
 				  	</div>
 				</div>
