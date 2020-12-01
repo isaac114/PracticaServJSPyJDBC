@@ -60,6 +60,7 @@ public class JDBCResultadoDAO extends JDBCGenericDAO<Resultado, Integer> impleme
 				String producto = rs.getString("pro_nombre");
 				System.out.println(cabeceraID+"--"+fecha+"--"+producto);
 				Resultado resultado = new Resultado(cabeceraID,fecha,estado,producto);
+				//System.out.println(""+producto);
 				resulist.add(resultado);
 			}
 		} catch (Exception e) {
@@ -72,6 +73,12 @@ public class JDBCResultadoDAO extends JDBCGenericDAO<Resultado, Integer> impleme
 	public Resultado busquedaU(String correo) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public void editarEstado(int id, String estado) {
+		String sql = "UPDATE compra SET cc_estado='"+estado+"' WHERE cc_id="+id;
+		conexionUno.update(sql);
 	}
 
 }

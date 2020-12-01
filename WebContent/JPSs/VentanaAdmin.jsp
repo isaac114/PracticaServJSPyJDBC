@@ -55,7 +55,7 @@
 				  </button>
 				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/ListarReq?eid=<%=request.getParameter("eid") %>">Listar Ordenes</a>
-				    <a style = "font-size: 15px" class="dropdown-item" href="#">Atender Ordenes</a>
+				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/Despachar?eid=<%=request.getParameter("eid") %>&cabecera=n&bandera=0">Atender Ordenes</a>
 				  </div>
 				</div>
 				<!--
