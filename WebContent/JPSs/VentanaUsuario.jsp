@@ -62,15 +62,15 @@
     <br>
     <br>
     <br>
-    <h2 style="color: white; font-size: 45px;">Hola ${nombre}, bienvenid@ a nuestro sitio web</h2>
+    <h2 style="color: white; font-size: 35px;">Hola ${nombre}, bienvenid@ a nuestro sitio web</h2>
 
 	<!-- AQUI VA LA IMAGEN -->
 	<br>
 	<br>
-	<p style="color: white; font-size: 25px;" id="label"><strong style="color: rgb(236,72,113);">Nombre:</strong> ${nombre}</p>
-	<p style="color: white; font-size: 25px;" id="label"><strong style="color: rgb(236,72,113);">Apellido:</strong> ${apellido}</p>
-	<p style="color: white; font-size: 25px;" id="label"><strong style="color: rgb(236,72,113);">Cedula:</strong> ${cedula}</p>
-	<p style="color: white; font-size: 25px;" id="label"><strong style="color: rgb(236,72,113);">Correo Electronico:</strong> ${correo}</p>
+	<p style="color: white; font-size: 20px;" id="label"><strong style="color: rgb(236,72,113);">Nombre:</strong> ${nombre}</p>
+	<p style="color: white; font-size: 20px;" id="label"><strong style="color: rgb(236,72,113);">Apellido:</strong> ${apellido}</p>
+	<p style="color: white; font-size: 20px;" id="label"><strong style="color: rgb(236,72,113);">Cedula:</strong> ${cedula}</p>
+	<p style="color: white; font-size: 20px;" id="label"><strong style="color: rgb(236,72,113);">Correo Electronico:</strong> ${correo}</p>
 	
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
