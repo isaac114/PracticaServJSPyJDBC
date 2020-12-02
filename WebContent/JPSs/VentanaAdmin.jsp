@@ -61,6 +61,8 @@
 				    <a style = "font-size: 15px" class="dropdown-item" href="http://localhost:8080/PracticaServJSPyJDBC/Despachar?eid=<%=request.getParameter("eid") %>&cabecera=n&bandera=0">Atender Ordenes</a>
 				  </div>
 				</div>
+				
+				
 				<!--
 				<div class="dropdown">
 				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -91,7 +93,7 @@
 
 
 
-    <a style="color: white; font-size: 25px;" href="http://localhost:8080/PracticaServJSPyJDBC/ServletDestroy">Cerrar Sesion</a>
+    
    
 
     <!-- Latest compiled and minified JavaScript -->
