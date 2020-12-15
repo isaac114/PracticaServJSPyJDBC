@@ -77,10 +77,10 @@ El administrador lista los productos de la empresa.
 
 ![Imagen20](https://user-images.githubusercontent.com/34029478/102235565-74411f80-3ec0-11eb-8ca6-bc135264dd94.png)
 
-![Imagen21](https://user-images.githubusercontent.com/34029478/102235573-75724c80-3ec0-11eb-93e1-0ca4904beb66.png)
 
 El Administrador busca producto.
 
+![Imagen21](https://user-images.githubusercontent.com/34029478/102235573-75724c80-3ec0-11eb-93e1-0ca4904beb66.png)
 ![Imagen22](https://user-images.githubusercontent.com/34029478/102235576-76a37980-3ec0-11eb-9a14-5c48f68d14cc.png)
 
 El Administrador elimina el producto.
