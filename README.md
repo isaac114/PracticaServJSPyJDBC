@@ -85,62 +85,62 @@ El Administrador busca producto.
 
 El Administrador elimina el producto.
 
-
+![Imagen23](https://user-images.githubusercontent.com/34029478/102235586-786d3d00-3ec0-11eb-86d2-a527e2c10ec0.png)
 
                                   Antes de eliminar el producto Mesa
                                   
-![Imagen23](https://user-images.githubusercontent.com/34029478/102235586-786d3d00-3ec0-11eb-86d2-a527e2c10ec0.png)
+![Imagen24](https://user-images.githubusercontent.com/34029478/102235588-7905d380-3ec0-11eb-9ed8-41e65c60d41c.png)
 
                                   Después de eliminar el producto Mesa
                                   
-![Imagen24](https://user-images.githubusercontent.com/34029478/102235588-7905d380-3ec0-11eb-9ed8-41e65c60d41c.png)
+ ![Imagen25](https://user-images.githubusercontent.com/34029478/102235591-7a370080-3ec0-11eb-8f7d-8b017beb6c2c.png)
 
 
 El Administrador Lista los requerimientos de compra de los Usuarios.
 
- ![Imagen25](https://user-images.githubusercontent.com/34029478/102235591-7a370080-3ec0-11eb-8f7d-8b017beb6c2c.png)
-
-
-El Administrador aprueba o rechaza los requerimientos de los usuarios.
 
 ![Imagen26](https://user-images.githubusercontent.com/34029478/102235597-7b682d80-3ec0-11eb-8ac6-d41763fc238b.png)
 
+El Administrador aprueba o rechaza los requerimientos de los usuarios.
+
+
+![Imagen27](https://user-images.githubusercontent.com/34029478/102235601-7c995a80-3ec0-11eb-9304-796bbd536df8.png)
 
 
 De igual manera, se pide manejar sesiones y filtros para que existe seguridad en el sistema. 
 
 Se utilizaron los dos filtros una del Usuario y la otra del Administrador.
 
-![Imagen27](https://user-images.githubusercontent.com/34029478/102235601-7c995a80-3ec0-11eb-9304-796bbd536df8.png) 
-
+![Imagen28](https://user-images.githubusercontent.com/34029478/102235608-7e631e00-3ec0-11eb-8c41-df6e9aa5b3a9.png)
 
 La SesionAciva.java del usuario.
 
- ![Imagen28](https://user-images.githubusercontent.com/34029478/102235608-7e631e00-3ec0-11eb-8c41-df6e9aa5b3a9.png)
+
+![Imagen29](https://user-images.githubusercontent.com/34029478/102235612-7f944b00-3ec0-11eb-8349-6f4ebb9766e4.png)
 
 La SesionAdmin.java del Administrador
 
-![Imagen29](https://user-images.githubusercontent.com/34029478/102235612-7f944b00-3ec0-11eb-8349-6f4ebb9766e4.png)
+![Imagen30](https://user-images.githubusercontent.com/34029478/102235613-80c57800-3ec0-11eb-96b5-8184f59817e4.png)
  
 La siguiente imagen nos muestra la clase contextJDBC.java que es la parte de la conexión hacia la base de datos con el nombre mydb.
 
-![Imagen30](https://user-images.githubusercontent.com/34029478/102235613-80c57800-3ec0-11eb-96b5-8184f59817e4.png)
+![Imagen31](https://user-images.githubusercontent.com/34029478/102235621-828f3b80-3ec0-11eb-8da4-83812a5c6a9b.png)
 
 También tenemos los daos conexiones con la base de datos y para ellos la creación de la base de datos de Usuarios.
  
-![Imagen31](https://user-images.githubusercontent.com/34029478/102235621-828f3b80-3ec0-11eb-8da4-83812a5c6a9b.png)
+![Imagen32](https://user-images.githubusercontent.com/34029478/102235626-83c06880-3ec0-11eb-85d5-cc0b9ef5456d.png)
 
 De la misma forma para la creación de la tabla de Administrador.
 
- ![Imagen32](https://user-images.githubusercontent.com/34029478/102235626-83c06880-3ec0-11eb-85d5-cc0b9ef5456d.png)
+![Imagen33](https://user-images.githubusercontent.com/34029478/102235631-8622c280-3ec0-11eb-8e2d-a9aa691975a6.png)
 
 De Comprar
 
-![Imagen33](https://user-images.githubusercontent.com/34029478/102235631-8622c280-3ec0-11eb-8e2d-a9aa691975a6.png)
+![Imagen34](https://user-images.githubusercontent.com/34029478/102235637-86bb5900-3ec0-11eb-8b1a-07770659487f.png)
 
 De Empresa
 
-![Imagen34](https://user-images.githubusercontent.com/34029478/102235637-86bb5900-3ec0-11eb-8b1a-07770659487f.png)
+![Imagen35](https://user-images.githubusercontent.com/34029478/102235451-57a4e780-3ec0-11eb-8214-bf2f7bcbd0ac.png)
 
 
 
