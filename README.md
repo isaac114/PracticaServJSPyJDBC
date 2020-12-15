@@ -54,18 +54,17 @@ El usuario puede Listar sus requerimientos de compra.
 
 En la siguiente imagen podemos visualizar la página del Administrador donde puede agregar, modificar, eliminar, listar los productos.
  
- ![Imagen13](https://user-images.githubusercontent.com/34029478/102235532-6ab7b780-3ec0-11eb-85d2-3ec5f94fb813.png)
- ![Imagen14](https://user-images.githubusercontent.com/34029478/102235537-6be8e480-3ec0-11eb-88a9-b88f0acaf50a.png)
+![Imagen13](https://user-images.githubusercontent.com/34029478/102235532-6ab7b780-3ec0-11eb-85d2-3ec5f94fb813.png)
 
+![Imagen14](https://user-images.githubusercontent.com/34029478/102235537-6be8e480-3ec0-11eb-88a9-b88f0acaf50a.png)
+![Imagen15](https://user-images.githubusercontent.com/34029478/102235541-6d1a1180-3ec0-11eb-9b78-2feb4632ec30.png)
 
 El Administrador Registra los productos.
 
- ![Imagen15](https://user-images.githubusercontent.com/34029478/102235541-6d1a1180-3ec0-11eb-9b78-2feb4632ec30.png)
+![Imagen16](https://user-images.githubusercontent.com/34029478/102235552-6ee3d500-3ec0-11eb-9375-55745de30ceb.png)
 
 El Administrador modifica los datos del producto agregado.
  
-![Imagen16](https://user-images.githubusercontent.com/34029478/102235552-6ee3d500-3ec0-11eb-9375-55745de30ceb.png)
-
 ![Imagen17](https://user-images.githubusercontent.com/34029478/102235554-70150200-3ec0-11eb-9dca-5c32b5ca6fb1.png)  
 ![Imagen18](https://user-images.githubusercontent.com/34029478/102235557-71462f00-3ec0-11eb-80a0-d4376641092a.png)
 
@@ -77,6 +76,7 @@ El administrador lista los productos de la empresa.
                           Listado despues de MOdificar
 
 ![Imagen20](https://user-images.githubusercontent.com/34029478/102235565-74411f80-3ec0-11eb-8ca6-bc135264dd94.png)
+
 ![Imagen21](https://user-images.githubusercontent.com/34029478/102235573-75724c80-3ec0-11eb-93e1-0ca4904beb66.png)
 
 El Administrador busca producto.
