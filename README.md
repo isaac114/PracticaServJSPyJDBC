@@ -1,6 +1,6 @@
 1.	Crear un repositorio en GitHub con el nombre “Práctica de laboratorio 01: Servlets, JSP y JDBC”
 
-![Imagen1](https://user-images.githubusercontent.com/34029478/102235464-596eab00-3ec0-11eb-8bdf-c991ead73cd5.png)
+![Captura](https://user-images.githubusercontent.com/34029478/102239339-c08e5e80-3ec4-11eb-92d8-04c864edeb13.JPG)
  
 https://github.com/isaac114/PracticaServJSPyJDBC.git
 
